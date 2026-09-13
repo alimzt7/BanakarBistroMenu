@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: tanha;
-  src: url(./public/fonts/Tanha.ttf);
+  font-family: Yekan;
+  src: url(./public/fonts/Yekan.ttf);
 }
 
 :root {
@@ -12,13 +12,15 @@
   --coal: #1c1a18;
   --paper: #f1ede4;
   --bone: #ded8ca;
-  --copper: #d15b3f;
   --saffron: #c79d55;
   --sage: #9da58e;
   --line-dark: rgba(241, 237, 228, 0.16);
   --line-light: rgba(18, 17, 16, 0.16);
-  --font-display: tanha;
-  --font-sans: tanha;
+
+  --banakar: #ffc000;
+  --card: #c3c1c2a2;
+  --font-display: Yekan;
+  --font-sans: Yekan;
 }
 
 * {
@@ -43,7 +45,7 @@ button {
   cursor: pointer;
 }
 ::selection {
-  background: var(--copper);
+  background: var(--banakar);
   color: var(--paper);
 }
 
@@ -81,7 +83,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: var(--copper);
+  background: var(--banakar);
   color: var(--paper);
   transition: transform 0.25s ease;
 }
@@ -107,7 +109,7 @@ button {
   width: 5px;
   height: 5px;
   border-radius: 999px;
-  background: var(--copper);
+  background: var(--banakar);
   content: "";
 }
 .header-outline-button,
@@ -155,7 +157,7 @@ button {
   font-size: 10px;
 }
 .cart-count-active {
-  background: var(--copper);
+  background: var(--banakar);
 }
 .hero {
   position: relative;
@@ -229,7 +231,7 @@ button {
   height: 31%;
   width: 31%;
   overflow: hidden;
-  background: var(--copper);
+  background: var(--banakar);
   transform: rotate(6deg);
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.2);
 }
@@ -266,7 +268,7 @@ button {
 .hero-title span {
   display: block;
   margin-right: 0.55em;
-  color: var(--copper);
+  color: var(--banakar);
 }
 .hero-side-note {
   position: absolute;
@@ -308,7 +310,7 @@ button {
   height: 9px;
   width: 9px;
   border-radius: 999px;
-  background: var(--copper);
+  background: var(--banakar);
 }
 .hero-rail {
   border-top: 1px solid var(--line-dark);
@@ -326,7 +328,7 @@ button {
   animation: ticker 28s linear infinite;
 }
 .hero-rail-inner span:nth-child(2n) {
-  color: var(--copper);
+  color: var(--banakar);
 }
 @keyframes ticker {
   from {
@@ -347,7 +349,7 @@ button {
   color: var(--ink);
 }
 .section-copper {
-  background: var(--copper);
+  background: var(--banakar);
   color: var(--paper);
 }
 .primary-button {
@@ -365,7 +367,7 @@ button {
     background-color 0.22s ease;
 }
 .primary-button:hover {
-  background: var(--copper);
+  background: var(--banakar);
   transform: translateY(-3px);
 }
 .outline-button {
@@ -454,7 +456,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--copper);
+  background: var(--banakar);
   padding: 34px;
 }
 .feature-copy .display {
@@ -513,7 +515,7 @@ button {
 }
 .menu-card {
   overflow: hidden;
-  background: var(--paper);
+  background: var(--card);
   color: var(--ink);
   box-shadow: 0 0 0 1px rgba(18, 17, 16, 0.08);
   transition:
@@ -586,7 +588,7 @@ button {
     color 0.2s ease;
 }
 .save-button:hover {
-  color: var(--copper);
+  color: var(--banakar);
   transform: scale(1.08);
 }
 .mini-add-button,
@@ -667,7 +669,7 @@ button {
   min-height: calc(100vh - 100px);
 }
 .reserve-hero {
-  background: var(--copper);
+  background: var(--banakar);
   color: var(--paper);
 }
 .booking-form {
@@ -701,7 +703,7 @@ button {
 .field-label input:focus,
 .field-label select:focus,
 .field-label textarea:focus {
-  border-color: var(--copper);
+  border-color: var(--banakar);
 }
 .field-label select {
   appearance: none;
@@ -724,7 +726,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: var(--copper);
+  background: var(--banakar);
   color: var(--paper);
 }
 .empty-bag {
@@ -785,7 +787,7 @@ button {
 .detail-tag {
   display: inline-flex;
   border-radius: 999px;
-  background: var(--copper);
+  background: var(--banakar);
   padding: 8px 11px;
   color: var(--paper);
   font-size: 8px;

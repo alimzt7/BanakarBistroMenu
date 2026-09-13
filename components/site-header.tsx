@@ -24,7 +24,7 @@ export function SiteHeader() {
           </span>
           <span className="text-right">
             <span className="block font-sans text-[12px] font-bold uppercase tracking-[0.22em]">
-              Ambre
+              Banakr Bistro
             </span>
             <span className="mt-1 block font-sans text-[9px] uppercase tracking-[0.22em] text-paper/45">
               Café · Table · Ritual

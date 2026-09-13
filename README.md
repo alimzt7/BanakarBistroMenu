@@ -34,6 +34,6 @@
 ### ۱. کلون کردن ریپوزیتوری
 
 ```bash
-git clone https://github.com/alimzt7/CafeMenu.git
+git clone https://github.com/alimzt7/BanakarBistroMenu.git
 cd cafe-menu
 ```
