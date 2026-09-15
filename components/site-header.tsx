@@ -14,7 +14,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setIsSideBarOpen(true)}
-            className="brand-mark group flex items-center gap-3 px-5 py-1 text-right focus:outline-none transition-transform active:scale-95"
+            className="brand-mark flex items-center gap-4 px-8 py-1 focus:outline-none transition-transform active:scale-95"
             aria-label="باز کردن منو"
           >
             <span className="brand-symbol">
@@ -26,11 +26,11 @@ export function SiteHeader() {
                 className="transition-transform group-hover:rotate-6 duration-300"
               />
             </span>
-            <span className="text-right">
-              <span className="brand-name block font-sans text-[20px] font-normal tracking-[0.10em] text-black">
+            <span className="">
+              <span className="brand-name block font-sans text-[20px] font-normal tracking-[0.10em] text-black text-center">
                 بناکار بیسترو
               </span>
-              <span className=" mt-1 block font-sans text-[9px] font-bold tracking-[0.22em] text-coal/45">
+              <span className=" mt-1 block font-sans text-[9px] font-bold tracking-[0.22em] text-coal/45 text-center">
                 Café x Pastry
               </span>
             </span>

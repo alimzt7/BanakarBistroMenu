@@ -59,8 +59,6 @@ button {
 }
 .display {
   font-family: var(--font-display);
-  letter-spacing: -0.15em;
-  font-weight: 400;
 }
 
 .eyebrow {
@@ -94,6 +92,10 @@ button {
   background-color: #1f1f1f;
 }
 
+.side-bar-header {
+  background-color: var(--banakar);
+}
+
 .sidebar-list {
   display: flex;
   flex-direction: column;
@@ -124,7 +126,6 @@ button {
   gap: 8px;
   border-radius: 999px;
   font-size: 10px;
-  font-weight: 700;
   letter-spacing: 0.08em;
   transition:
     transform 0.2s ease,
@@ -144,7 +145,6 @@ button {
   display: flex;
   min-height: 40px;
   background: var(--paper);
-  padding: 0 9px 0 14px;
   color: var(--ink);
 }
 .header-cart-button:hover {
