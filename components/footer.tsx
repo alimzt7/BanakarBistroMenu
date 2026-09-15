@@ -7,9 +7,9 @@ function Footer() {
       <div className="mx-auto grid max-w-[1480px] gap-10 px-5 py-12 md:grid-cols-[1.1fr_.9fr_.7fr] md:px-10 md:py-16 ">
         <div>
           <p className="font-sans text-[12px] font-bold uppercase tracking-[.23em]">
-            <span className="text-copper">Ambre</span> Cafe
+            <span className="text-[var(--banakar)]">BANAKAR</span> BISTRO
           </p>
-          <p className="display mt-5 max-w-[290px] text-4xl leading-[1]">
+          <p className="display mt-5 max-w-[290px] text-2xl leading-[1]">
             منتظر دیدارتان هستیم.
           </p>
         </div>
@@ -17,22 +17,20 @@ function Footer() {
           <div>
             <p className="eyebrow text-paper/38">ساعت</p>
             <p className="mt-4 text-xs leading-7 text-paper/65">
-              شنبه تا چهارشنبه
+              همه روزه :
               <br />
               ۸:۰۰ — ۲۳:۰۰
               <br />
-              <br />
-              پنجشنبه و جمعه
-              <br />
-              ۹:۰۰ — ۰۰:۰۰
             </p>
           </div>
           <div>
             <p className="eyebrow text-paper/38">آدرس</p>
             <p className="mt-4 text-xs leading-7 text-paper/65">
-              ایران، اصفهان
+              ایران، اصفهان،
               <br />
-              خیابان حکیم نظامی
+              خیابان حکیم نظامی،
+              <br />
+              جنب مجتمع ارکیده
             </p>
           </div>
         </div>
@@ -40,22 +38,22 @@ function Footer() {
           <div className="flex gap-3">
             <a
               className="icon-button border-paper/20 text-paper"
-              href="instagram.com/ambercafe"
+              href="https://instagram.com/banakar.bistro"
               aria-label="اینستاگرام"
             >
               <Icon name="instagram" size={17} />
             </a>
             <a
               className="icon-button border-paper/20 text-paper"
-              href="tel:+983130000000"
+              href="tel:+983136294469"
               aria-label="تماس"
             >
               <Icon name="phone" size={17} />
             </a>
           </div>
           <p className="font-sans text-[9px] uppercase tracking-[.13em] text-paper/35">
-            © 2026 <span className="text-copper">AMBRE</span> / ساخته‌شده برای
-            ماندن
+            © 2026 <span className="text-[var(--banakar)]">BANAKAR</span> /
+            ساخته‌شده برای ماندن
           </p>
         </div>
       </div>

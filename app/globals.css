@@ -63,11 +63,15 @@ button {
 
 .eyebrow {
   font-size: 9px;
-  font-weight: 700;
   letter-spacing: 0.2em;
-  line-height: 1;
+  line-height: 0.5;
   text-transform: uppercase;
 }
+
+.text-border {
+  border-right: 0.5px solid var(--sage);
+}
+
 .site-header {
   position: relative;
   z-index: 30;
@@ -245,8 +249,8 @@ button {
   right: 7%;
   top: 12%;
   display: flex;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(18, 17, 16, 0.25);
@@ -267,7 +271,7 @@ button {
 }
 .hero-title {
   max-width: 850px;
-  font-size: clamp(5rem, 14vw, 8rem);
+  font-size: clamp(4.5rem, 14vw, 6rem);
   line-height: 0.7;
 }
 .hero-title span {
@@ -415,7 +419,6 @@ button {
 }
 .feature-image {
   position: relative;
-  min-height: 510px;
   overflow: hidden;
   background: var(--coal);
 }
@@ -814,7 +817,7 @@ button {
     padding: 52px 7% 30px;
   }
   .hero-title {
-    font-size: clamp(5.1rem, 24vw, 8rem);
+    font-size: clamp(4rem, 24vw, 5rem);
   }
   .hero-photo {
     left: 7%;

@@ -12,12 +12,23 @@ function About() {
             </h2>
             <div className="mt-12 flex items-start gap-4 text-paper/45">
               <span className="vertical-note eyebrow">
-                THE <span className="text-copper">AMBRE</span> MOOD
+                <span className="text-[var(--banakar)]">BANAKAR</span> CAFE
               </span>
-              <span className="h-28 w-px bg-paper/20" />
-              <p className="max-w-[240px] text-xs leading-7">
-                ما به میزهایی باور داریم که آدم‌ها را کمی بیشتر نگه می‌دارند؛
-                برای یک بشقاب دیگر، یک داستان دیگر.
+              <p className="text-border max-w-[280px] text-sm leading-7 pr-2">
+                <span className="text-paper text-base">آغاز؛</span>
+                <br />
+                همه چیز از یک خانه شروع شد...
+                <br />
+                منتظرت هستیم تا تو هم با داستانی منحصر به فرد، عضوی از این خانه
+                شوی.
+                <br />
+                <span className="text-[var(--banakar)] text-base">
+                  بناکار بیسترو
+                </span>
+                <br />
+                دلیل انتخاب نام "بیسترو" برای این عمارت، استفاده از واژه‌ای است
+                که تداعی گر کافه‌ای کوچک و پرانرژی به همراه نوشیدنی و دسر‌های
+                منحصر به فرد می‌باشد.
               </p>
             </div>
           </div>
