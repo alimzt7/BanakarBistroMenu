@@ -128,7 +128,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1480px] px-5 py-10 md:px-10 md:py-20">
           <div className="grid gap-12 md:grid-cols-[.82fr_1.18fr] md:items-center">
             <div>
-              <p className="section-kicker text-copper">داستان ما · ۰۲</p>
+              <p className="section-kicker text-copper">درباره ما · ۰۲</p>
               <h2 className="display mt-6 text-[clamp(2rem,9vw,3.2rem)] leading-[1]">
                 به وقت با هم بودن.
               </h2>

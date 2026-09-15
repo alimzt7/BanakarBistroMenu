@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Yekan;
-  src: url(./public/fonts/Yekan.ttf);
+  font-family: Peyda;
+  src: url(../public/fonts/Peyda-Black.ttf);
 }
 
 :root {
@@ -19,8 +19,8 @@
 
   --banakar: #ffc000;
   --card: #c3c1c2a2;
-  --font-display: Yekan;
-  --font-sans: Yekan;
+  --font-display: Peyda;
+  --font-sans: Peyda;
 }
 
 * {
@@ -76,42 +76,47 @@ button {
   background: var(--ink);
   color: var(--paper);
 }
-.brand-symbol {
+
+.brand-mark {
+  background: var(--banakar);
+  border-radius: 50;
+}
+
+.brand-name:hover {
+  transform: translateY(4px);
+  transition-duration: 300ms;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  padding: 24px 16px;
+  background-color: #1f1f1f;
+}
+
+.sidebar-list {
   display: flex;
-  height: 40px;
-  width: 40px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: var(--banakar);
-  color: var(--paper);
-  transition: transform 0.25s ease;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.brand-mark:hover .brand-symbol {
-  transform: rotate(-12deg);
+
+.sidebar-link {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
-.nav-link {
-  position: relative;
-  color: rgba(241, 237, 228, 0.54);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  transition: color 0.2s ease;
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background-color: #c89b63;
 }
-.nav-link:hover,
-.nav-link-active {
-  color: var(--paper);
-}
-.nav-link-active::after {
-  position: absolute;
-  bottom: -10px;
-  right: 0;
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--banakar);
-  content: "";
-}
+
 .header-outline-button,
 .header-cart-button {
   align-items: center;
