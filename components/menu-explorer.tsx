@@ -17,7 +17,7 @@ export function MenuExplorer() {
       const matchesQuery =
         !needle ||
         [item.nameFa, item.nameEn, item.description, item.category].some(
-          (value) => value.toLowerCase().includes(needle),
+          (value) => value?.toLowerCase().includes(needle),
         );
       return matchesCategory && matchesQuery;
     });
@@ -28,7 +28,7 @@ export function MenuExplorer() {
       <div className="mx-auto max-w-[1480px] px-5 py-10 md:px-10">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow text-copper">منوی فصل سوم ما</p>
+            <p className="eyebrow text-copper">منوی جذاب ما</p>
           </div>
           <div className="max-w-[310px] text-sm leading-7 text-ink/55 pt-4">
             <p>اگر بین انتخاب‌ها ماندی، تیم ما برای پیشنهاد دادن این‌جاست.</p>

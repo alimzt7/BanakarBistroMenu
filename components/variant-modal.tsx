@@ -73,7 +73,7 @@ export function VariantModal({
                 onClick={() => setSelectedVariant(variant)}
                 className={`flex items-center justify-between p-3.5 rounded-xl cursor-pointer border transition-all duration-200 ${
                   isSelected
-                    ? "border-[#eb5e28] bg-[#eb5e28]/10 text-white shadow-sm"
+                    ? "border-[#ffc000] bg-[#ffc000]/10 text-white shadow-sm"
                     : "border-white/10 bg-white/[0.02] hover:border-white/20 text-neutral-300"
                 }`}
               >
@@ -81,7 +81,7 @@ export function VariantModal({
                   <div
                     className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${
                       isSelected
-                        ? "border-[#eb5e28] bg-[#eb5e28]"
+                        ? "border-[#ffc000] bg-[#ffc000]"
                         : "border-white/30 bg-transparent"
                     }`}
                   >
@@ -121,7 +121,7 @@ export function VariantModal({
           <button
             type="button"
             onClick={handleConfirm}
-            className="flex-[2] py-2.5 rounded-xl bg-[#eb5e28] text-white text-sm font-bold shadow-lg shadow-[#eb5e28]/25 hover:brightness-110 active:scale-[0.98] transition-all"
+            className="flex-[2] py-2.5 rounded-xl bg-[#ffc000] text-[var(--ink)] text-sm font-bold shadow-lg shadow-[#ffc000]/25 hover:brightness-110 active:scale-[0.98] transition-all"
           >
             افزودن به سبد • {formatPrice(selectedVariant.price)}
           </button>

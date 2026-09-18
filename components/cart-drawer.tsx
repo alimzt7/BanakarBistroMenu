@@ -87,9 +87,8 @@ export function CartDrawer() {
                           {item.nameFa}
                         </p>
 
-                        {/* اگر واریانت داشت، با رنگ اکسنت نشونش بده 👇 */}
                         {item.selectedVariant && (
-                          <span className="inline-block mt-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[#eb5e28]/15 text-[#eb5e28]">
+                          <span className="inline-block mt-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[#ffc000]/15 text-[#ffc000]">
                             {item.selectedVariant.nameFa} (
                             {item.selectedVariant.nameEn})
                           </span>
