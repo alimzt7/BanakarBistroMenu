@@ -1,7 +1,5 @@
-import { useState } from "react";
-
 const toPersianDigits = (num: string | number): string => {
-  const persian = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", ""];
+  const persian = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "٩"];
   return String(num)
     .split("")
     .map((d) => persian[Number(d) as number] || d)

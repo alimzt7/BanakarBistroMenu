@@ -3,7 +3,6 @@ import "./globals.css";
 import { CartDrawer } from "../components/cart-drawer";
 import { CartProvider } from "../components/cart-context";
 import { SiteHeader } from "../components/site-header";
-import SideBar from "../components/side-bar";
 
 export const metadata: Metadata = {
   title: "Banakar Bistro · Cafe x Pastry",
@@ -20,7 +19,6 @@ export default function RootLayout({
           <div className="grain" />
           <SiteHeader />
           <div className="flex min-h-[calc(100vh-80px)]">
-            <SideBar />
             <main className="flex-1 min-w-0">{children}</main>
           </div>
 

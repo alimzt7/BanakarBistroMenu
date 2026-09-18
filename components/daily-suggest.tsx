@@ -8,7 +8,7 @@ function DailySuggest() {
 
   return (
     <section className="section-paper overflow-hidden" id="today">
-      <div className="mx-auto flex max-w-[1480px] flex-col md:flex-row items-center justify-around gap-8 px-5 py-8 md:px-10">
+      <div className="mx-auto flex max-w-[1480px] flex-col md:flex-row items-center justify-around gap-8 px-5 py-10 md:px-10">
         <div className="flex flex-col justify-around self-stretch">
           <div>
             <p className="section-kicker text-copper">پیشنهاد روز</p>

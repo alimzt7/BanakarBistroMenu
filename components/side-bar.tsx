@@ -14,8 +14,8 @@ interface NavItem {
 }
 
 interface SideBarProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const navigationItems: NavItem[] = [
@@ -25,7 +25,7 @@ const navigationItems: NavItem[] = [
   { id: "reserve", label: "رزرو میز", href: "/reserve" },
 ];
 
-function SideBar({ isOpen, onClose }: SideBarProps) {
+function SideBar({ isOpen = false, onClose = () => {} }: SideBarProps) {
   const pathName = usePathname();
   const { count, open } = useCart();
 

@@ -63,8 +63,8 @@ export function MenuExplorer() {
 
         {filteredItems.length ? (
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-            {filteredItems.map((item, index) => (
-              <MenuCard key={item.id} item={item} index={index} />
+            {filteredItems.map((item) => (
+              <MenuCard key={item.id} item={item} />
             ))}
           </div>
         ) : (

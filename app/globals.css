@@ -89,40 +89,6 @@ button {
   transition-duration: 300ms;
 }
 
-.sidebar {
-  width: 240px;
-  min-height: 100vh;
-  padding: 24px 16px;
-  background-color: #1f1f1f;
-}
-
-.side-bar-header {
-  background-color: var(--banakar);
-}
-
-.sidebar-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.sidebar-link {
-  display: block;
-  padding: 12px 16px;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-}
-
-.sidebar-link:hover,
-.sidebar-link.active {
-  background-color: #c89b63;
-}
-
 .header-outline-button,
 .header-cart-button {
   align-items: center;

@@ -78,7 +78,7 @@ export function CartDrawer() {
                   <img
                     src={item.image}
                     alt=""
-                    className="h-[70px] w-[70px] shrink-0 object-cover grayscale-[0.12]"
+                    className="h-[70px] w-[70px] shrink-0 object-cover grayscale-[0.12] rounded-lg"
                   />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-start justify-between gap-3">
@@ -86,7 +86,16 @@ export function CartDrawer() {
                         <p className="display text-xl leading-[0.8]">
                           {item.nameFa}
                         </p>
-                        <p className="mt-2 font-sans text-[9px] uppercase tracking-[0.13em] text-ink/45">
+
+                        {/* اگر واریانت داشت، با رنگ اکسنت نشونش بده 👇 */}
+                        {item.selectedVariant && (
+                          <span className="inline-block mt-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[#eb5e28]/15 text-[#eb5e28]">
+                            {item.selectedVariant.nameFa} (
+                            {item.selectedVariant.nameEn})
+                          </span>
+                        )}
+
+                        <p className="mt-1.5 font-sans text-[9px] uppercase tracking-[0.13em] text-ink/45">
                           {item.nameEn}
                         </p>
                       </div>
@@ -94,6 +103,7 @@ export function CartDrawer() {
                         {formatPrice(item.price * (cart[item.id] ?? 0))}
                       </p>
                     </div>
+
                     <div className="mt-4 flex items-center gap-3">
                       <button
                         className="quantity-button"
