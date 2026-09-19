@@ -26,17 +26,26 @@ export function MenuExplorer() {
   return (
     <section className="menu-stage">
       <div className="mx-auto max-w-[1480px] px-5 py-10 md:px-10">
-        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
+        <div className="flex flex-col justify-between md:flex-row md:items-end px-10">
           <div>
             <p className="eyebrow text-copper">منوی جذاب ما</p>
           </div>
-          <div className="max-w-[310px] text-sm leading-7 text-ink/55 pt-4">
+          <div className="flex flex-col max-w-[340px] text-sm leading-7 text-ink/55 pt-4 gap-2">
             <p>اگر بین انتخاب‌ها ماندی، تیم ما برای پیشنهاد دادن این‌جاست.</p>
+            <label className="search-field ">
+              <Icon name="search" size={16} />
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="جست‌وجوی یک طعم"
+                aria-label="جست‌وجوی منو"
+              />
+            </label>
           </div>
         </div>
 
         <div className="menu-toolbar mt-14">
-          <div className="no-scrollbar flex min-w-0 gap-2 overflow-x-auto pb-1">
+          <div className="flex min-w-0 gap-2 overflow-x-auto pb-1">
             {categories.map((category) => (
               <button
                 key={category}
@@ -50,15 +59,6 @@ export function MenuExplorer() {
               </button>
             ))}
           </div>
-          <label className="search-field">
-            <Icon name="search" size={16} />
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="جست‌وجوی یک طعم"
-              aria-label="جست‌وجوی منو"
-            />
-          </label>
         </div>
 
         {filteredItems.length ? (

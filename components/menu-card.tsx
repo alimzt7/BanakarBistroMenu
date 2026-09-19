@@ -23,7 +23,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
 
   return (
     <>
-      <article className="menu-card group flex flex-col overflow-hidden">
+      <article className="menu-card group flex flex-col overflow-hidden h-[350px]">
         <Link href={"/menu/" + item.slug} className="relative block h-full">
           <div className="menu-card-media">
             <img src={item.image} alt={item.nameFa} />
@@ -57,11 +57,11 @@ export function MenuCard({ item }: { item: MenuItem }) {
             </div>
           </div>
         </Link>
-        <div className="flex justify-around items-center gap-4 p-5">
-          <div className="flex justify-center flex-col gap-2">
+        <div className="flex justify-around items-start h-full gap-4 p-5">
+          <div className="flex justify-start flex-col gap-2">
             <p className="flex-1 text-sm">
               {item.description && item.description.length > 50
-                ? item.description.slice(0, 30) + "..."
+                ? item.description.slice(0, 25) + "..."
                 : item.description}
             </p>
             <p className="font-bold">
