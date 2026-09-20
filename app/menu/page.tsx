@@ -1,13 +1,14 @@
+import { getProducts } from "../../lib/supabase/products";
 import { MenuExplorer } from "../../components/menu-explorer";
 import Footer from "../../components/footer";
 
-export default function MenuPage() {
+export default async function MenuPage() {
+  const products = await getProducts();
+
   return (
-    <div>
-      <main>
-        <MenuExplorer />
-      </main>
+    <>
+      <MenuExplorer items={products} />
       <Footer />
-    </div>
+    </>
   );
 }

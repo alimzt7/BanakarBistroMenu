@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { Icon } from "./icons";
-import { menuItems } from "../lib/menu";
+import type { MenuItem } from "../lib/menu";
 
-function DailySuggest() {
-  const signature = menuItems[0];
+function DailySuggest({ signature }: { signature: MenuItem | undefined }) {
+  if (!signature) return null;
 
   return (
     <section className="section-paper overflow-hidden" id="today">

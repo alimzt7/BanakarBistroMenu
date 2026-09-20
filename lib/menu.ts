@@ -26,6 +26,10 @@ export type ProductVariant = {
 
 export type MenuItem = {
   id: string;
+  displayId?: string;
+  isAvailable?: boolean;
+  isFeatured?: boolean;
+  isArchived?: boolean;
   slug: string;
   nameFa: string;
   nameEn: string;
@@ -277,7 +281,7 @@ export const menuItems: MenuItem[] = [
     time: "20 دقیقه",
   },
   {
-    slug: "orange-cool-up",
+    slug: "orange-juice-breakfast",
     nameFa: "آب پرتقال",
     nameEn: "Orange Cool up",
     description: "آب پرتقال طبیعی",
@@ -292,7 +296,7 @@ export const menuItems: MenuItem[] = [
     time: "20 دقیقه",
   },
   {
-    slug: "red-cool-up",
+    slug: "watermelon-juice-breakfast",
     nameFa: "آب هندوانه",
     nameEn: "Red Cool up",
     description: "آب هندوانه طبیعی",
@@ -832,7 +836,7 @@ export const menuItems: MenuItem[] = [
     time: "10-15 دقیقه",
   },
   {
-    slug: "orange-cool-up",
+    slug: "orange-juice-mocktail",
     nameFa: "آب پرتقال",
     nameEn: "Orange Cool up",
     description: "آب پرتقال طبیعی",
@@ -847,7 +851,7 @@ export const menuItems: MenuItem[] = [
     time: "10-15 دقیقه",
   },
   {
-    slug: "red-cool-up",
+    slug: "watermelon-juice-mocktail",
     nameFa: "آب هندوانه",
     nameEn: "Red Cool up",
     description: "آب هندوانه طبیعی",

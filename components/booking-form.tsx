@@ -1,11 +1,16 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { SubmitEvent } from "react";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 import { Icon } from "./icons";
 import TimeField from "./time-field";
 
 interface AppointmentForm {
   name: string;
+  date: string;
   time: string;
 }
 
@@ -13,13 +18,14 @@ export function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<AppointmentForm>({
     name: "",
+    date: "",
     time: "09:00",
   });
   const handleChange = (field: keyof AppointmentForm, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
   }
@@ -58,7 +64,19 @@ export function BookingForm() {
         </label>
         <label className="field-label">
           تاریخ
-          <input required type="date" />
+          <DatePicker
+            value={formData.date}
+            onChange={(date) =>
+              handleChange("date", date?.format("YYYY/MM/DD") ?? "")
+            }
+            calendar={persian}
+            locale={persian_fa}
+            format="YYYY/MM/DD"
+            calendarPosition="bottom-right"
+            inputClass="booking-date-input"
+            placeholder="انتخاب تاریخ"
+            required
+          />
         </label>
         <TimeField
           value={formData.time}

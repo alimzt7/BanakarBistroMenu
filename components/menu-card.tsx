@@ -14,6 +14,8 @@ export function MenuCard({ item }: { item: MenuItem }) {
   const { add } = useCart();
 
   const handleAddClick = () => {
+    if (item.isAvailable === false) return;
+
     if (item.variants && item.variants.length > 0) {
       setIsVariantModalOpen(true);
     } else {
@@ -23,12 +25,22 @@ export function MenuCard({ item }: { item: MenuItem }) {
 
   return (
     <>
-      <article className="menu-card group flex flex-col overflow-hidden h-[350px]">
+      <article
+        className={`menu-card group flex h-[350px] flex-col overflow-hidden ${
+          item.isAvailable === false ? "menu-card-sold-out" : ""
+        }`}
+      >
         <Link href={"/menu/" + item.slug} className="relative block h-full">
           <div className="menu-card-media">
             <img src={item.image} alt={item.nameFa} />
             <div className="menu-card-shade" />
             <div className="absolute right-4 top-4 flex items-center gap-2">
+              {item.isFeatured && (
+                <span className="pill pill-featured">
+                  <Icon name="spark" size={11} />
+                  پیشنهاد ویژه
+                </span>
+              )}
               <span className="pill pill-dark">{item.category}</span>
             </div>
             <button
@@ -45,7 +57,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
             <div className="absolute bottom-5 right-5 left-5 flex items-end justify-between text-paper">
               <div>
                 <p className="font-sans text-[9px] font-bold tracking-[0.16em] text-paper/60">
-                  {item.id} / {item.category}
+                  {item.category}
                 </p>
                 <h3 className="display mt-2 text-[1.8rem] leading-[0.76]">
                   {item.nameFa}
@@ -55,6 +67,9 @@ export function MenuCard({ item }: { item: MenuItem }) {
                 </p>
               </div>
             </div>
+            {item.isAvailable === false && (
+              <div className="sold-out-overlay">فعلاً تمام شده</div>
+            )}
           </div>
         </Link>
         <div className="flex justify-around items-start h-full gap-4 p-5">
@@ -71,13 +86,20 @@ export function MenuCard({ item }: { item: MenuItem }) {
           </div>
 
           <button
+            type="button"
             onClick={handleAddClick}
+            disabled={item.isAvailable === false}
             className={
               "mini-add-button" +
               " " +
-              (item.id === "04" ? "mini-add-button-dark" : "")
+              (item.id === "04" ? "mini-add-button-dark" : "") +
+              (item.isAvailable === false ? " mini-add-button-disabled" : "")
             }
-            aria-label={"افزودن " + item.nameFa + " به سفارش"}
+            aria-label={
+              item.isAvailable === false
+                ? item.nameFa + " فعلاً تمام شده"
+                : "افزودن " + item.nameFa + " به سفارش"
+            }
           >
             <Icon name="plus" size={15} />
           </button>

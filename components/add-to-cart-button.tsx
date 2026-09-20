@@ -14,16 +14,20 @@ export function AddToCartButton({
   const { add, open } = useCart();
 
   function handleAdd() {
+    if (item.isAvailable === false) return;
+
     add(item);
     open();
   }
 
   return (
     <button
+      type="button"
+      disabled={item.isAvailable === false}
       className="primary-button w-full justify-between"
       onClick={handleAdd}
     >
-      {label}
+      {item.isAvailable === false ? "فعلاً تمام شده" : label}
       <Icon name="plus" size={16} />
     </button>
   );

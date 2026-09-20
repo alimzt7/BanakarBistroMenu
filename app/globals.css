@@ -567,6 +567,29 @@ button {
   background: rgba(18, 17, 16, 0.25);
   color: var(--paper);
 }
+.pill-featured {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--banakar);
+  color: var(--ink);
+}
+.menu-card-sold-out .menu-card-media img {
+  filter: grayscale(0.8) saturate(0.35) brightness(0.72);
+}
+.sold-out-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 17, 16, 0.3);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
 .save-button {
   display: flex;
   position: absolute;
@@ -612,6 +635,14 @@ button {
 .mini-add-button-dark:hover {
   background: var(--paper);
   color: var(--ink);
+}
+.mini-add-button-disabled,
+.mini-add-button-disabled:hover {
+  cursor: not-allowed;
+  border-color: rgba(18, 17, 16, 0.1);
+  background: rgba(18, 17, 16, 0.08);
+  color: rgba(18, 17, 16, 0.35);
+  transform: none;
 }
 .empty-results {
   display: flex;
@@ -695,6 +726,33 @@ button {
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0;
+}
+.field-label .rmdp-container {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+.field-label .booking-date-input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin: 0;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 17, 16, 0.25);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: right;
+  direction: rtl;
+}
+.field-label .booking-date-input:focus {
+  border-color: var(--banakar);
 }
 .field-label input:focus,
 .field-label select:focus,

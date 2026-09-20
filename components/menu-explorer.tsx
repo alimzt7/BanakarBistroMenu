@@ -1,17 +1,17 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { categories, menuItems, type MenuCategory } from "../lib/menu";
+import { categories, type MenuCategory, type MenuItem } from "../lib/menu";
 import { Icon } from "./icons";
 import { MenuCard } from "./menu-card";
 
-export function MenuExplorer() {
+export function MenuExplorer({ items }: { items: MenuItem[] }) {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>("همه");
   const [query, setQuery] = useState("");
 
   const filteredItems = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    return menuItems.filter((item) => {
+    return items.filter((item) => {
       const matchesCategory =
         activeCategory === "همه" || item.category === activeCategory;
       const matchesQuery =
@@ -21,7 +21,7 @@ export function MenuExplorer() {
         );
       return matchesCategory && matchesQuery;
     });
-  }, [activeCategory, query]);
+  }, [activeCategory, query, items]);
 
   return (
     <section className="menu-stage">

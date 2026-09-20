@@ -2,11 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "../../../components/add-to-cart-button";
 import { Icon } from "../../../components/icons";
-import { formatPrice, getMenuItem, menuItems } from "../../../lib/menu";
+import { formatPrice } from "../../../lib/menu";
+import { getProductBySlug } from "../../../lib/supabase/products";
 
-export function generateStaticParams() {
-  return menuItems.map((item) => ({ slug: item.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function MenuDetailPage({
   params,
@@ -14,7 +13,7 @@ export default async function MenuDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = getMenuItem(slug);
+  const item = await getProductBySlug(slug);
   if (!item) notFound();
 
   return (
@@ -38,7 +37,7 @@ export default async function MenuDetailPage({
               <div className="flex items-center justify-between gap-4">
                 <span className="detail-tag">{item.tag}</span>
                 <span className="font-sans text-[10px] font-bold uppercase tracking-[.14em] text-ink/50">
-                  {item.id} / {item.category}
+                  {item.category}
                 </span>
               </div>
               <h1 className="display mt-10 text-[clamp(3rem,9vw,4rem)]">
