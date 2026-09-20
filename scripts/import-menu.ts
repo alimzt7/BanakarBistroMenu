@@ -35,9 +35,6 @@ async function importMenu() {
           preparation_time: item.time,
           ingredients: item.ingredients,
           note: item.note,
-          is_available: true,
-          is_featured: item.tag === "پیشنهاد ویژه",
-          is_archived: false,
         },
         {
           onConflict: "slug",

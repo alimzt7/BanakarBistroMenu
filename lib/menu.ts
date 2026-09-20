@@ -1,4 +1,4 @@
-export type MenuCategory =
+﻿export type MenuCategory =
   | "همه"
   | "صبحانه"
   | "سالاد و سوپ"
@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     price: 698000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202511041000515041821.jpeg",
+      "/images/menu/fry-up.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "سوسیس انجوی دست ساز",
@@ -100,7 +100,7 @@ export const menuItems: MenuItem[] = [
     price: 439000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240241420546189.jpg",
+      "/images/menu/oliva-omelette.jpg",
     tag: null,
     ingredients: [
       "تخم مرغ",
@@ -123,7 +123,7 @@ export const menuItems: MenuItem[] = [
     price: 419000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240242213989055.jpg",
+      "/images/menu/charmont-omelette.jpg",
     tag: null,
     ingredients: [
       "تخم مرغ",
@@ -145,7 +145,7 @@ export const menuItems: MenuItem[] = [
     price: 579000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240242423366838.jpg",
+      "/images/menu/bacon-toast.jpg",
     tag: null,
     ingredients: [
       "نان تست بر پایه خمیر ترش",
@@ -171,7 +171,7 @@ export const menuItems: MenuItem[] = [
     price: 589000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240243145558676.jpg",
+      "/images/menu/enjoy-toast.jpg",
     tag: null,
     ingredients: [
       "نان تست بر پایه خمیر ترش",
@@ -197,7 +197,7 @@ export const menuItems: MenuItem[] = [
     price: 789000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240243445875247.jpg",
+      "/images/menu/stocky-toast.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "نان تست بر پایه خمیر ترش",
@@ -222,7 +222,7 @@ export const menuItems: MenuItem[] = [
     price: 569000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240244071972031.jpg",
+      "/images/menu/spinach-toast.jpg",
     tag: null,
     ingredients: [
       "نان تست بر پایه خمیر ترش",
@@ -247,7 +247,7 @@ export const menuItems: MenuItem[] = [
     price: 398000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240247011683218.jpg",
+      "/images/menu/peanutbutter-toast.jpg",
     tag: null,
     ingredients: [
       "نان تست بر پایه خمیر ترش",
@@ -270,7 +270,7 @@ export const menuItems: MenuItem[] = [
     price: 489000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202606061831344827835.jpeg",
+      "/images/menu/french-toast.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "دو عدد نان بریوش آغشته به تخم مرغ و شیر و کمی دارچین",
@@ -288,7 +288,7 @@ export const menuItems: MenuItem[] = [
     price: 270000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202511031815125559011.jpeg",
+      "/images/menu/orange.jpeg",
     tag: null,
     ingredients: ["آب پرتقال طبیعی"],
     note: null,
@@ -303,7 +303,7 @@ export const menuItems: MenuItem[] = [
     price: 210000,
     category: "صبحانه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505241649517429328.JPG",
+      "/images/menu/watermelon.JPG",
     tag: null,
     ingredients: ["آب هندوانه طبیعی"],
     note: null,
@@ -319,7 +319,7 @@ export const menuItems: MenuItem[] = [
     price: 727000,
     category: "سالاد و سوپ",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202311121421200756317.jpg",
+      "/images/menu/viande-salad.jpg",
     tag: null,
     ingredients: [
       "کاهو فرانسوی",
@@ -343,7 +343,7 @@ export const menuItems: MenuItem[] = [
     price: 629000,
     category: "سالاد و سوپ",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202510171924487176196.jpg",
+      "/images/menu/shandy-salad.jpg",
     tag: null,
     ingredients: [
       "کاهو پیچ",
@@ -368,7 +368,7 @@ export const menuItems: MenuItem[] = [
     price: 527000,
     category: "پاستا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240254330804605.jpg",
+      "/images/menu/pomodoro-pasta.jpg",
     tag: null,
     ingredients: [],
     note: null,
@@ -404,7 +404,7 @@ export const menuItems: MenuItem[] = [
     price: 537000,
     category: "پاستا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240254058613355.jpg",
+      "/images/menu/peanut-smoky-pasta.jpg",
     tag: null,
     ingredients: [],
     note: null,
@@ -440,7 +440,7 @@ export const menuItems: MenuItem[] = [
     price: 998000,
     category: "باگت",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202501041502317698798.jpg",
+      "/images/menu/steak-baguette.jpg",
     tag: null,
     ingredients: [
       "نان باگت فرانسوی",
@@ -465,7 +465,7 @@ export const menuItems: MenuItem[] = [
     price: 717000,
     category: "باگت",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202501041505162343816.jpg",
+      "/images/menu/chicken-baguette.jpg",
     tag: null,
     ingredients: [
       "نان باگت فرانسوی",
@@ -489,7 +489,7 @@ export const menuItems: MenuItem[] = [
     price: 737000,
     category: "باگت",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202501041506043466877.jpg",
+      "/images/menu/sausage-baguette.jpg",
     tag: null,
     ingredients: [
       "نان باگت فرانسوی",
@@ -513,7 +513,7 @@ export const menuItems: MenuItem[] = [
     price: 727000,
     category: "باگت",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202501041506532624015.jpg",
+      "/images/menu/bacon-baguette.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "نان باگت فرانسوی",
@@ -538,7 +538,7 @@ export const menuItems: MenuItem[] = [
     price: 637000,
     category: "باگت",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202501041507213567952.jpg",
+      "/images/menu/mushroom-baguette.jpg",
     tag: null,
     ingredients: [
       "نان باگت فرانسوی",
@@ -561,7 +561,7 @@ export const menuItems: MenuItem[] = [
     price: 327000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202607260312251333232.jpeg",
+      "/images/menu/peach-crumble.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: [],
     note: null,
@@ -576,7 +576,7 @@ export const menuItems: MenuItem[] = [
     price: 347000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202607260313286258676.jpeg",
+      "/images/menu/lemon-cream-tart.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: [],
     note: null,
@@ -591,7 +591,7 @@ export const menuItems: MenuItem[] = [
     price: 357000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202607260311035415756.jpeg",
+      "/images/menu/black-forest-tart.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: [],
     note: null,
@@ -607,7 +607,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202606212126027236901.jpeg",
+      "/images/menu/berry-cream-tart.jpeg",
     tag: null,
     ingredients: [
       "تارت بر پایه سبله بروتون و کنفی توت فرنگی و تمشک به همراه موسلین وانیلی و پودر پسته",
@@ -624,7 +624,7 @@ export const menuItems: MenuItem[] = [
     price: 359000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202604032253118193895.png",
+      "/images/menu/matilda-chocolate-cake.png",
     tag: "پیشنهاد ویژه",
     ingredients: ["کیک اسفنجی شکلاتی به همراه گاناش شکلات تلخ"],
     note: null,
@@ -639,7 +639,7 @@ export const menuItems: MenuItem[] = [
     price: 298000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202403132153165111356.jpg",
+      "/images/menu/cheesecake.jpg",
     tag: null,
     ingredients: ["کیک پنیری با پایه بسکوییت کره ای پخته شده به روش نیویورکی"],
     note: null,
@@ -655,7 +655,7 @@ export const menuItems: MenuItem[] = [
     price: 338000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202403132154110124208.jpg",
+      "/images/menu/cheesecake-with-hazelnut-chocolate-topping.jpg",
     tag: null,
     ingredients: [
       "کیک پنیری با پایه بسکوییت کره ای پخته شده به روش نیویورکی با روکش کرم شکلات فندقی",
@@ -673,7 +673,7 @@ export const menuItems: MenuItem[] = [
     price: 338000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202403141835033002510.jpg",
+      "/images/menu/cheesecake-with-lotus-topping.jpg",
     tag: null,
     ingredients: [
       "کیک پنیری با پایه بسکوییت کره ای پخته شده به روش نیویورکی با روکش کرم بسکوییت لوتوس",
@@ -691,7 +691,7 @@ export const menuItems: MenuItem[] = [
     price: 338000,
     category: "دسر",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202403141837027548768.jpg",
+      "/images/menu/cheesecake-with-peanut-butter-topping.jpg",
     tag: null,
     ingredients: [
       "کیک پنیری با پایه بسکوییت کره ای پخته شده به روش نیویورکی با روکش کره بادام زمینی",
@@ -708,7 +708,7 @@ export const menuItems: MenuItem[] = [
     price: 329000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202412240320290240046.jpg",
+      "/images/menu/gummycandy.jpg",
     tag: null,
     ingredients: ["ترکیب ترش و شیرین میوه های استوایی با پس طعم پاستیلی"],
     note: null,
@@ -723,7 +723,7 @@ export const menuItems: MenuItem[] = [
     price: 319000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062254361029494.jpg",
+      "/images/menu/emerald.jpg",
     tag: null,
     ingredients: ["ترکیب میوه های ملس و تابستانه با پس طعم تلخی پرتقال"],
     note: null,
@@ -738,7 +738,7 @@ export const menuItems: MenuItem[] = [
     price: 319000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261911484044616.jpg",
+      "/images/menu/vin-de-miel.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب مرکبات و انگور با پس طعم شهد عسل و چای ترش دستساز"],
     note: null,
@@ -753,7 +753,7 @@ export const menuItems: MenuItem[] = [
     price: 329000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062254471812536.jpg",
+      "/images/menu/mont-parnasse.jpg",
     tag: null,
     ingredients: ["ترکیب ترش میوه های قرمز با پس طعم شیرینی فندق"],
     note: null,
@@ -768,7 +768,7 @@ export const menuItems: MenuItem[] = [
     price: 319000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261912013577543.jpg",
+      "/images/menu/ete-cool.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب بهشتی و خنک میوه های گرمسیری با پس طعم نعنا و لیمو"],
     note: null,
@@ -783,7 +783,7 @@ export const menuItems: MenuItem[] = [
     price: 329000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261912140766419.jpg",
+      "/images/menu/charlotte.jpg",
     tag: null,
     ingredients: ["ترکیب میوه های استوایی با هم آمیزی انار و ذغال اخته"],
     note: null,
@@ -798,7 +798,7 @@ export const menuItems: MenuItem[] = [
     price: 319000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261912242642824.jpg",
+      "/images/menu/lilin.jpg",
     tag: null,
     ingredients: ["ترکیب ترش و شیرین میوه های قرمز با چاشنی نمک"],
     note: null,
@@ -813,7 +813,7 @@ export const menuItems: MenuItem[] = [
     price: 339000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261912560459831.jpg",
+      "/images/menu/grenouille.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب سرحال کننده مرکبات و آلو ها با مکمل انرژی زا"],
     note: null,
@@ -828,7 +828,7 @@ export const menuItems: MenuItem[] = [
     price: 349000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261913080305269.jpg",
+      "/images/menu/denis.jpg",
     tag: null,
     ingredients: ["ترکیب سیب و پرتقال با چاشنی شهد زنجبیل دستساز اسپایسی"],
     note: null,
@@ -843,7 +843,7 @@ export const menuItems: MenuItem[] = [
     price: 270000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202511031815379156156.jpeg",
+      "/images/menu/orange.jpeg",
     tag: null,
     ingredients: ["آب پرتقال طبیعی"],
     note: null,
@@ -858,7 +858,7 @@ export const menuItems: MenuItem[] = [
     price: 210000,
     category: "ماكتيل",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505241653327787325.JPG",
+      "/images/menu/watermelon.JPG",
     tag: null,
     ingredients: ["آب هندوانه طبیعی"],
     note: null,
@@ -873,7 +873,7 @@ export const menuItems: MenuItem[] = [
     price: 207000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/doppio.jpg",
     tag: null,
     ingredients: ["اسپرسو"],
     note: null,
@@ -902,7 +902,7 @@ export const menuItems: MenuItem[] = [
     price: 207000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/americano.jpg",
     tag: null,
     ingredients: ["اسپرسو", "آب گرم"],
     note: null,
@@ -931,7 +931,7 @@ export const menuItems: MenuItem[] = [
     price: 297000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/cappucino.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر گرم"],
     note: null,
@@ -960,7 +960,7 @@ export const menuItems: MenuItem[] = [
     price: 337000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/latte.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر گرم"],
     note: null,
@@ -989,7 +989,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/mocha.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر گرم", "سس شکلات"],
     note: null,
@@ -1018,7 +1018,7 @@ export const menuItems: MenuItem[] = [
     price: 277000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/machiato.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر گرم"],
     note: null,
@@ -1047,7 +1047,7 @@ export const menuItems: MenuItem[] = [
     price: 347000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/affogatto.jpg",
     tag: null,
     ingredients: ["اسپرسو", "بستنی وانیل"],
     note: null,
@@ -1076,7 +1076,7 @@ export const menuItems: MenuItem[] = [
     price: 207000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/iced-americano.jpg",
     tag: null,
     ingredients: ["اسپرسو", "آب", "یخ"],
     note: null,
@@ -1105,7 +1105,7 @@ export const menuItems: MenuItem[] = [
     price: 337000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/iced-latte.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر", "یخ"],
     note: null,
@@ -1134,7 +1134,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/iced-mocha.jpg",
     tag: null,
     ingredients: ["اسپرسو", "شیر", "یخ", "سس شکلات"],
     note: null,
@@ -1163,7 +1163,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242033350505039.jpeg",
+      "/images/menu/iced-coconut-latte.jpeg",
     tag: null,
     ingredients: ["اسپرسو", "شیر نارگیل", "یخ"],
     note: null,
@@ -1192,7 +1192,7 @@ export const menuItems: MenuItem[] = [
     price: 289000,
     category: "نوشیدنی بر پایه اسپرسو",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242027060319770.jpeg",
+      "/images/menu/coffee-tonic.jpeg",
     tag: "پیشنهاد ویژه",
     ingredients: ["قهوه سرد دم"],
     note: null,
@@ -1208,7 +1208,7 @@ export const menuItems: MenuItem[] = [
     price: 479000,
     category: "قهوه هاى دمى",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202502040025447391915.jpg",
+      "/images/menu/v60-drip-coffee.jpg",
     tag: null,
     ingredients: ["قهوه دم آوری شده"],
     note: null,
@@ -1251,7 +1251,7 @@ export const menuItems: MenuItem[] = [
     price: 479000,
     category: "فراپه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062301347180694.jpg",
+      "/images/menu/creamnut-frappe.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["قهوه", "شیر", "شکلات فندقی", "یخ ", "خامه حجیم شده"],
     note: null,
@@ -1266,7 +1266,7 @@ export const menuItems: MenuItem[] = [
     price: 457000,
     category: "فراپه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062302593598384.jpg",
+      "/images/menu/cocomoco-frappe.jpg",
     tag: null,
     ingredients: ["قهوه", "شیر نارگیل", "سیروپ افرا", "یخ ", "خامه حجیم شده"],
     note: null,
@@ -1281,7 +1281,7 @@ export const menuItems: MenuItem[] = [
     price: 457000,
     category: "فراپه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250119254357869.JPG",
+      "/images/menu/biscoff-frappe.JPG",
     tag: null,
     ingredients: ["قهوه", "شیر", "کرم بیسکوییت", "یخ ", "خامه حجیم شده"],
     note: null,
@@ -1297,7 +1297,7 @@ export const menuItems: MenuItem[] = [
     price: 487000,
     category: "فراپه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250124524880306.JPG",
+      "/images/menu/chocoberry-frappe.JPG",
     tag: null,
     ingredients: ["قهوه", "شیر", "توت فرنگی", "یخ ", "خامه حجیم شده"],
     note: null,
@@ -1313,7 +1313,7 @@ export const menuItems: MenuItem[] = [
     price: 447000,
     category: "فراپه",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250129378849150.JPG",
+      "/images/menu/peanutbutter-frappe.JPG",
     tag: null,
     ingredients: [
       "قهوه",
@@ -1336,7 +1336,7 @@ export const menuItems: MenuItem[] = [
     price: 417000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202311121419209819565.jpg",
+      "/images/menu/butternut-shake.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "ترکیب بستنی کَره ای همراه با مغزیجات گردو و فندق و ارده غنی شده",
@@ -1353,7 +1353,7 @@ export const menuItems: MenuItem[] = [
     price: 407000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202311121419349662551.jpg",
+      "/images/menu/sale-sucre-shake.jpg",
     tag: null,
     ingredients: ["شیک شور و شیرین همراه با بادام زمینی نمکی"],
     note: null,
@@ -1368,7 +1368,7 @@ export const menuItems: MenuItem[] = [
     price: 427000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250140039090132.JPG",
+      "/images/menu/figgy-shake.JPG",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب بستنی وانیلی و موز به همراه پوره انجیر و شیر نارگیل"],
     note: null,
@@ -1383,7 +1383,7 @@ export const menuItems: MenuItem[] = [
     price: 357000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250148040532173.JPG",
+      "/images/menu/classic-chocolate-milkshake.JPG",
     tag: null,
     ingredients: ["میلک شیک شکلاتی"],
     note: null,
@@ -1398,7 +1398,7 @@ export const menuItems: MenuItem[] = [
     price: 357000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250151568992557.JPG",
+      "/images/menu/coffee-milkshake.JPG",
     tag: null,
     ingredients: ["بستنی وانیلی به همراه دو شات اسپرسو"],
     note: null,
@@ -1413,7 +1413,7 @@ export const menuItems: MenuItem[] = [
     price: 343000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250155438553513.JPG",
+      "/images/menu/lotus-milkshake.JPG",
     tag: null,
     ingredients: ["ترکیب بستنی وانیلی به همراه کرم لوتوس و بیسکوییت"],
     note: null,
@@ -1428,7 +1428,7 @@ export const menuItems: MenuItem[] = [
     price: 339000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505301527331587757.JPG",
+      "/images/menu/strawberry-milkshake.JPG",
     tag: null,
     ingredients: ["میلک شیک وانیلی به همراه توت فرنگی تازه"],
     note: null,
@@ -1443,7 +1443,7 @@ export const menuItems: MenuItem[] = [
     price: 395000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202311121419488724355.jpg",
+      "/images/menu/solaire-smoothie.jpg",
     tag: null,
     ingredients: ["ترکیب پر ویتامین انبه و پرتقال"],
     note: null,
@@ -1458,7 +1458,7 @@ export const menuItems: MenuItem[] = [
     price: 349000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250159372030844.JPG",
+      "/images/menu/nutella-milkshake.JPG",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب بستنی وانیلی به همراه کرم شکلات فندقی"],
     note: null,
@@ -1474,7 +1474,7 @@ export const menuItems: MenuItem[] = [
     price: 399000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202311121422203412974.jpg",
+      "/images/menu/salt-berry-smoothie.jpg",
     tag: null,
     ingredients: [
       "ترکیب جذاب توت فرنگی و آلبالو همراه با چاشنی ماست جنگلی و نمک",
@@ -1491,7 +1491,7 @@ export const menuItems: MenuItem[] = [
     price: 387000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062305575185269.jpg",
+      "/images/menu/sun-peach-smoothie.jpg",
     tag: null,
     ingredients: ["ترکیب تابستانه هلو و شلیل همراه با پوره آلو زرد"],
     note: null,
@@ -1506,7 +1506,7 @@ export const menuItems: MenuItem[] = [
     price: 379000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062305433777186.jpg",
+      "/images/menu/ete-rouge-smoothie.jpg",
     tag: null,
     ingredients: ["ترکیب جذاب پرتقال و توت فرنگی تازه"],
     note: null,
@@ -1521,7 +1521,7 @@ export const menuItems: MenuItem[] = [
     price: 397000,
     category: "شیک و اسموتی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202408062305173304968.jpg",
+      "/images/menu/inferno-smoothie.jpg",
     tag: null,
     ingredients: ["ترکیب شلیل و تمشک جنگلی به همراه پوره آلو قرمز"],
     note: null,
@@ -1536,7 +1536,7 @@ export const menuItems: MenuItem[] = [
     price: 299000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505141913069504635.jpg",
+      "/images/menu/matcha.jpg",
     tag: null,
     ingredients: ["ماچا"],
     note: null,
@@ -1551,7 +1551,7 @@ export const menuItems: MenuItem[] = [
     price: 299000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505141934245587799.jpg",
+      "/images/menu/iced-matcha.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ماچا دم آوری شده همراه آب یخ"],
     note: null,
@@ -1566,7 +1566,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505141945168403121.jpg",
+      "/images/menu/matcha-latte.jpg",
     tag: null,
     ingredients: ["ماچا دم آوری شده به همراه شیر داغ"],
     note: null,
@@ -1581,7 +1581,7 @@ export const menuItems: MenuItem[] = [
     price: 367000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505141935351232245.jpg",
+      "/images/menu/iced-matcha-latte.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ماچا دم آوری شده همراه با شیر و یخ"],
     note: null,
@@ -1596,7 +1596,7 @@ export const menuItems: MenuItem[] = [
     price: 369000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202506031706480036187.JPG",
+      "/images/menu/matchagatto.JPG",
     tag: "پیشنهاد ویژه",
     ingredients: ["ماچا دم آوری شده بر روی دو اسکوپ بستنی"],
     note: null,
@@ -1611,7 +1611,7 @@ export const menuItems: MenuItem[] = [
     price: 379000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202506031708170048149.JPG",
+      "/images/menu/matcha-milkshake.JPG",
     tag: null,
     ingredients: ["ماچا دم آوری شده ترکیب شده با بستنی وانیلی"],
     note: null,
@@ -1626,7 +1626,7 @@ export const menuItems: MenuItem[] = [
     price: 429000,
     category: "ماچا",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202506031709546936277.JPG",
+      "/images/menu/mango-matcha.JPG",
     tag: null,
     ingredients: ["ماچا دم آوری شده به همراه شیر و پوره انبه"],
     note: null,
@@ -1641,7 +1641,7 @@ export const menuItems: MenuItem[] = [
     price: 298000,
     category: "نوشیدنی گازدار",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250216541855669.JPG",
+      "/images/menu/passion-lime.JPG",
     tag: null,
     ingredients: ["ترکیب لیمو و زردآلو با پشن فروت گازدار"],
     note: null,
@@ -1656,7 +1656,7 @@ export const menuItems: MenuItem[] = [
     price: 298000,
     category: "نوشیدنی گازدار",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250216219038884.JPG",
+      "/images/menu/poire-petite.JPG",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب لیمو و سیب سبز با آب گلابی گازدار"],
     note: null,
@@ -1671,7 +1671,7 @@ export const menuItems: MenuItem[] = [
     price: 298000,
     category: "نوشیدنی گازدار",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250206514430266.JPG",
+      "/images/menu/cherry-berry.JPG",
     tag: null,
     ingredients: ["ترکیب آب آلبالو گاز دار به همراه توت فرنگی با پس طعم گیلاس"],
     note: null,
@@ -1686,7 +1686,7 @@ export const menuItems: MenuItem[] = [
     price: 249000,
     category: "نوشیدنی گازدار",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250219118591058.JPG",
+      "/images/menu/mojito.JPG",
     tag: null,
     ingredients: ["ترکیب لیمو و نعنا با آب گازدار"],
     note: null,
@@ -1701,7 +1701,7 @@ export const menuItems: MenuItem[] = [
     price: 245000,
     category: "نوشیدنی گازدار",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505250219318437554.JPG",
+      "/images/menu/lemonade.JPG",
     tag: null,
     ingredients: ["ترکیب لیمو و آب گازدار"],
     note: null,
@@ -1744,7 +1744,7 @@ export const menuItems: MenuItem[] = [
     price: 319000,
     category: "نوشیدنی های گرم",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261914073594402.jpg",
+      "/images/menu/ardental.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب ماسالا هندی با جنسینگ و خشخاش و شیر"],
     note: null,
@@ -1759,7 +1759,7 @@ export const menuItems: MenuItem[] = [
     price: 297000,
     category: "نوشیدنی های گرم",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261913560936676.jpg",
+      "/images/menu/coco-chocolate.jpg",
     tag: null,
     ingredients: [],
     note: null,
@@ -1794,7 +1794,7 @@ export const menuItems: MenuItem[] = [
     price: 299000,
     category: "نوشیدنی های گرم",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202506031721082340623.jpg",
+      "/images/menu/pink-chocolate.jpg",
     tag: null,
     ingredients: [
       "ترکیب صورتی توت فرنگی با شکلات سفید و شیر به همراه مارشمالو",
@@ -1811,7 +1811,7 @@ export const menuItems: MenuItem[] = [
     price: 327000,
     category: "نوشیدنی های گرم",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261914297347430.jpg",
+      "/images/menu/matchate.jpg",
     tag: null,
     ingredients: ["هم آمیزی ماچا", "پسته و شکلات سفید با شیر"],
     note: null,
@@ -1826,7 +1826,7 @@ export const menuItems: MenuItem[] = [
     price: 289000,
     category: "نوشیدنی های گرم",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202402282107455114695.jpg",
+      "/images/menu/tea-latte-caramel.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب شیرین عصاره چای و کارامل با شیر"],
     note: null,
@@ -1841,7 +1841,7 @@ export const menuItems: MenuItem[] = [
     price: 159000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202308261923206483295.jpg",
+      "/images/menu/special-black-tea.jpg",
     tag: null,
     ingredients: ["ترکیب چای بهاره لاهیجان و فومنات"],
     note: null,
@@ -1857,7 +1857,7 @@ export const menuItems: MenuItem[] = [
     price: 197000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231321073974068.jpg",
+      "/images/menu/helin.jpg",
     tag: null,
     ingredients: [
       "ترکیبی از چای سبز چینی",
@@ -1876,7 +1876,7 @@ export const menuItems: MenuItem[] = [
     price: 213000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231322089290754.jpg",
+      "/images/menu/gabriel.jpg",
     tag: null,
     ingredients: [
       "ترکیب شیرین سیب و پاپایا با همنشینی عطر و طعم دارچین و گل نسترن",
@@ -1893,7 +1893,7 @@ export const menuItems: MenuItem[] = [
     price: 217000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231322337730007.jpg",
+      "/images/menu/oten.jpg",
     tag: null,
     ingredients: ["ترکیبی سرخ از میوه های قرمز با پس طعم بادیان و بهارنارنج"],
     note: null,
@@ -1909,7 +1909,7 @@ export const menuItems: MenuItem[] = [
     price: 213000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231323025700741.jpg",
+      "/images/menu/rozelin.jpg",
     tag: null,
     ingredients: [
       "ترکیب ماندگار آناناس و نارگیل با پس طعم حیرت انگیز رزماری",
@@ -1928,7 +1928,7 @@ export const menuItems: MenuItem[] = [
     price: 205000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231324184924909.jpg",
+      "/images/menu/marseille.jpg",
     tag: null,
     ingredients: [
       "ترکیب سنتی چای فرانسوی و بادرنجبویه با همنشینی گل سرخ و توت سفید",
@@ -1946,7 +1946,7 @@ export const menuItems: MenuItem[] = [
     price: 207000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231323488828997.jpg",
+      "/images/menu/landa.jpg",
     tag: null,
     ingredients: [
       "ترکیب حس آرامش لاوندر فرانسوی و گل گاو زبان با چاشنی گل سرخ و هل و دارچین",
@@ -1964,7 +1964,7 @@ export const menuItems: MenuItem[] = [
     price: 219000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231331147935543.jpg",
+      "/images/menu/energisant.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: [
       "ترکیب انرژی بخش چای سیاه و میخک و بادیان به همراه هل و زنجبیل و دارچین",
@@ -1981,7 +1981,7 @@ export const menuItems: MenuItem[] = [
     price: 199000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202312231330168397898.jpg",
+      "/images/menu/anti-froid.jpg",
     tag: "پیشنهاد ویژه",
     ingredients: ["ترکیب شفابخش به و به لیمو و اورگانو به همراه رزماری"],
     note: null,
@@ -1996,7 +1996,7 @@ export const menuItems: MenuItem[] = [
     price: 207000,
     category: "دمنوش ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202402282108594342892.jpg",
+      "/images/menu/yerba-mate.jpg",
     tag: null,
     ingredients: ["ترکیب معجزه گر گیاهان دارویی با پس طعم تنباکو"],
     note: null,
@@ -2012,7 +2012,7 @@ export const menuItems: MenuItem[] = [
     price: 217000,
     category: "آیسد تی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242001440206296.jpeg",
+      "/images/menu/berry-iced-tea.jpeg",
     tag: null,
     ingredients: [
       "ترکیب سرد دَم از چای ترش",
@@ -2033,7 +2033,7 @@ export const menuItems: MenuItem[] = [
     price: 217000,
     category: "آیسد تی",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202605242005234597671.jpeg",
+      "/images/menu/peach-iced-tea.jpeg",
     tag: null,
     ingredients: [
       "ترکیب سرد دَم از زردآلو",
@@ -2053,7 +2053,7 @@ export const menuItems: MenuItem[] = [
     price: 55000,
     category: "افزودنی ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505301559269040296.JPG",
+      "/images/menu/syrup.JPG",
     tag: null,
     ingredients: [],
     note: null,
@@ -2076,7 +2076,7 @@ export const menuItems: MenuItem[] = [
     price: 100000,
     category: "افزودنی ها",
     image:
-      "https://img01.live-app.ir/Files/394/Product/202505301600158420841.JPG",
+      "/images/menu/plant-based-milk.JPG",
     tag: null,
     ingredients: [],
     note: null,

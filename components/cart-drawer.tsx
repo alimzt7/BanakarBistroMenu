@@ -4,10 +4,12 @@ import { useState } from "react";
 import { formatPrice } from "../lib/menu";
 import { useCart } from "./cart-context";
 import { Icon } from "./icons";
+import { tables } from "../lib/tables";
 
 export function CartDrawer() {
   const { cart, lines, total, isOpen, close, change } = useCart();
   const [confirmed, setConfirmed] = useState(false);
+  const [tableNumber, setTableNumber] = useState("");
 
   if (!isOpen) return null;
 
@@ -131,13 +133,29 @@ export function CartDrawer() {
 
         {!confirmed && (
           <div className="border-t border-ink/15 px-6 py-6 md:px-8">
+            <label className="field-label mb-5 block">
+              نام میز
+              <select
+                value={tableNumber}
+                onChange={(event) => setTableNumber(event.target.value)}
+                required
+              >
+                <option value="">انتخاب میز</option>
+                {tables.map((table) => (
+                  <option key={table.value} value={table.value}>
+                    {table.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
             <div className="mb-4 flex items-center justify-between font-sans text-xs uppercase tracking-[0.12em]">
               <span>جمع سفارش</span>
               <span className="font-bold">{formatPrice(total)} تومان</span>
             </div>
             <button
               className="primary-button w-full justify-between disabled:cursor-not-allowed disabled:opacity-35"
-              disabled={lines.length === 0}
+              disabled={lines.length === 0 || !tableNumber}
               onClick={() => setConfirmed(true)}
             >
               تایید سفارش <Icon name="arrow-up-left" size={17} />
