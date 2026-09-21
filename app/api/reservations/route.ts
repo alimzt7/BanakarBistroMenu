@@ -14,16 +14,28 @@ export async function POST(request: Request) {
       source?: "customer" | "admin";
     };
 
-    if (!body.name || !body.phone || !body.reservationDate || !body.reservationTime || !body.guestCount) {
-      return NextResponse.json({ error: "Required reservation fields are missing" }, { status: 400 });
+    if (
+      !body.name ||
+      !body.phone ||
+      !body.reservationDate ||
+      !body.reservationTime ||
+      !body.guestCount
+    ) {
+      return NextResponse.json(
+        { error: "Required reservation fields are missing" },
+        { status: 400 },
+      );
     }
 
     const supabase = await createClient();
     const source = body.source === "admin" ? "admin" : "customer";
 
     if (source === "admin") {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user)
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
     const { data, error } = await supabase
       .from("reservations")
@@ -41,10 +53,15 @@ export async function POST(request: Request) {
       .single();
 
     if (error) throw error;
-    return NextResponse.json({ reservationId: data.id, reservation: data }, { status: 201 });
+    return NextResponse.json(
+      { reservationId: data.id, reservation: data },
+      { status: 201 },
+    );
   } catch (error) {
     console.error("Reservation creation failed", error);
-    return NextResponse.json({ error: "Could not create reservation" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Could not create reservation" },
+      { status: 500 },
+    );
   }
 }
-

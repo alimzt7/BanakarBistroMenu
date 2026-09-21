@@ -25,4 +25,3 @@ export async function getReservations(): Promise<AdminReservation[]> {
   if (error) throw new Error(`Could not load reservations: ${error.message}`);
   return (data ?? []) as AdminReservation[];
 }
-

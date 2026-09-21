@@ -11,7 +11,9 @@ export default async function HomePage() {
     <main>
       <Hero />
       <DailySuggest
-        signature={products.find((product) => product.isFeatured) ?? products[0]}
+        signature={
+          products.find((product) => product.isFeatured) ?? products[0]
+        }
       />
       <About />
       <Footer />

@@ -190,19 +190,19 @@ button {
   transform: rotate(-5deg);
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.22);
 }
-.hero-photo img,
-.menu-card-media img,
-.story-photo img,
-.detail-image img {
+.hero-photo Image,
+.menu-card-media Image,
+.story-photo Image,
+.detail-image Image {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.hero-photo img {
+.hero-photo Image {
   filter: saturate(0.74) contrast(1.03);
   transition: transform 0.7s ease;
 }
-.hero-photo:hover img {
+.hero-photo:hover Image {
   transform: scale(1.06);
 }
 .hero-copy {
@@ -321,14 +321,14 @@ button {
   background: linear-gradient(0deg, rgba(18, 17, 16, 0.7), transparent 60%);
   content: "";
 }
-.feature-image img {
+.feature-image Image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: saturate(0.75);
   transition: transform 0.8s ease;
 }
-.feature-image:hover img {
+.feature-image:hover Image {
   transform: scale(1.06);
 }
 .feature-callout {
@@ -424,14 +424,14 @@ button {
   background: var(--coal);
 }
 
-.menu-card-media img {
+.menu-card-media Image {
   display: block;
   object-fit: cover;
   object-position: center;
   filter: saturate(0.76) contrast(1.02);
   transition: transform 0.8s ease;
 }
-.menu-card:hover .menu-card-media img {
+.menu-card:hover .menu-card-media Image {
   transform: scale(1.07);
 }
 .menu-card-shade {
@@ -463,7 +463,7 @@ button {
   background: var(--banakar);
   color: var(--ink);
 }
-.menu-card-sold-out .menu-card-media img {
+.menu-card-sold-out .menu-card-media Image {
   filter: grayscale(0.8) saturate(0.35) brightness(0.72);
 }
 .sold-out-overlay {
@@ -547,11 +547,11 @@ button {
   overflow: hidden;
   background: var(--coal);
 }
-.story-photo img {
+.story-photo Image {
   filter: saturate(0.72);
   transition: transform 0.7s ease;
 }
-.story-photo:hover img {
+.story-photo:hover Image {
   transform: scale(1.05);
 }
 .story-photo-tall {
@@ -702,7 +702,7 @@ button {
   overflow: hidden;
   background: var(--coal);
 }
-.detail-image img {
+.detail-image Image {
   filter: saturate(0.75);
 }
 .detail-panel {
@@ -757,6 +757,12 @@ button {
   .menu-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+  .menu-card {
+    height: 410px;
+  }
+  .menu-card-media {
+    height: 320px;
   }
   .search-field {
     width: 100%;

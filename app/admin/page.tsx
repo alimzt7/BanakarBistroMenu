@@ -26,11 +26,26 @@ export default async function AdminPage() {
           <p className="mt-5 text-sm text-ink/60">وارد شده با: {user.email}</p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            <Link href="/admin/products" className="border border-ink/15 p-6 transition hover:bg-black/5">مدیریت محصولات</Link>
+            <Link
+              href="/admin/products"
+              className="border border-ink/15 p-6 transition hover:bg-black/5"
+            >
+              مدیریت محصولات
+            </Link>
 
-            <Link href="/admin/orders" className="border border-ink/15 p-6 transition hover:bg-black/5">سفارش‌ها</Link>
+            <Link
+              href="/admin/orders"
+              className="border border-ink/15 p-6 transition hover:bg-black/5"
+            >
+              سفارش‌ها
+            </Link>
 
-            <Link href="/admin/reservations" className="border border-ink/15 p-6 transition hover:bg-black/5">رزروها</Link>
+            <Link
+              href="/admin/reservations"
+              className="border border-ink/15 p-6 transition hover:bg-black/5"
+            >
+              رزروها
+            </Link>
           </div>
         </div>
       </main>

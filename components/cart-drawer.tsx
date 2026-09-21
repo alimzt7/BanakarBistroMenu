@@ -195,9 +195,12 @@ export function CartDrawer() {
               disabled={lines.length === 0 || !tableNumber || submitting}
               onClick={submitOrder}
             >
-              {submitting ? "در حال ثبت..." : "تایید سفارش"} <Icon name="arrow-up-left" size={17} />
+              {submitting ? "در حال ثبت..." : "تایید سفارش"}{" "}
+              <Icon name="arrow-up-left" size={17} />
             </button>
-            {error && <p className="mt-3 text-center text-xs text-red-600">{error}</p>}
+            {error && (
+              <p className="mt-3 text-center text-xs text-red-600">{error}</p>
+            )}
           </div>
         )}
       </aside>

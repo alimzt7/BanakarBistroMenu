@@ -25,7 +25,9 @@ export function ProductEditModal({
   const [category, setCategory] = useState<MenuCategory>(product.category);
   const [tag, setTag] = useState(product.tag ?? "");
   const [time, setTime] = useState(product.time);
-  const [ingredients, setIngredients] = useState(product.ingredients.join(", "));
+  const [ingredients, setIngredients] = useState(
+    product.ingredients.join(", "),
+  );
   const [note, setNote] = useState(product.note ?? "");
   const [isAvailable, setIsAvailable] = useState(product.isAvailable ?? true);
   const [isFeatured, setIsFeatured] = useState(product.isFeatured ?? false);
@@ -109,7 +111,10 @@ export function ProductEditModal({
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid gap-8 p-5 md:grid-cols-[220px_1fr] md:p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="grid gap-8 p-5 md:grid-cols-[220px_1fr] md:p-8"
+        >
           <div>
             <p className="field-label">تصویر محصول</p>
             <div className="relative mt-3 aspect-square overflow-hidden bg-black/10">
@@ -160,56 +165,105 @@ export function ProductEditModal({
             <div className="grid gap-7 md:grid-cols-2">
               <label className="field-label">
                 نام فارسی
-                <input value={nameFa} onChange={(event) => setNameFa(event.target.value)} required />
+                <input
+                  value={nameFa}
+                  onChange={(event) => setNameFa(event.target.value)}
+                  required
+                />
               </label>
               <label className="field-label">
                 نام انگلیسی
-                <input value={nameEn} onChange={(event) => setNameEn(event.target.value)} />
+                <input
+                  value={nameEn}
+                  onChange={(event) => setNameEn(event.target.value)}
+                />
               </label>
               <label className="field-label">
                 قیمت
-                <input type="number" min="0" value={price} onChange={(event) => setPrice(event.target.value)} required />
+                <input
+                  type="number"
+                  min="0"
+                  value={price}
+                  onChange={(event) => setPrice(event.target.value)}
+                  required
+                />
               </label>
               <label className="field-label">
                 دسته‌بندی
-                <select value={category} onChange={(event) => setCategory(event.target.value as MenuCategory)}>
-                  {categories.filter((item) => item !== "همه").map((item) => (
-                    <option key={item} value={item}>{item}</option>
-                  ))}
+                <select
+                  value={category}
+                  onChange={(event) =>
+                    setCategory(event.target.value as MenuCategory)
+                  }
+                >
+                  {categories
+                    .filter((item) => item !== "همه")
+                    .map((item) => (
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    ))}
                 </select>
               </label>
               <label className="field-label">
                 برچسب
-                <input value={tag} onChange={(event) => setTag(event.target.value)} placeholder="مثلاً پیشنهاد ویژه" />
+                <input
+                  value={tag}
+                  onChange={(event) => setTag(event.target.value)}
+                  placeholder="مثلاً پیشنهاد ویژه"
+                />
               </label>
               <label className="field-label">
                 زمان آماده‌سازی
-                <input value={time} onChange={(event) => setTime(event.target.value)} />
+                <input
+                  value={time}
+                  onChange={(event) => setTime(event.target.value)}
+                />
               </label>
             </div>
 
             <label className="field-label">
               توضیحات
-              <textarea rows={4} value={description} onChange={(event) => setDescription(event.target.value)} />
+              <textarea
+                rows={4}
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
             </label>
 
             <label className="field-label">
               مواد اولیه
-              <input value={ingredients} onChange={(event) => setIngredients(event.target.value)} placeholder="با کاما جدا کن" />
+              <input
+                value={ingredients}
+                onChange={(event) => setIngredients(event.target.value)}
+                placeholder="با کاما جدا کن"
+              />
             </label>
 
             <label className="field-label">
               یادداشت
-              <textarea rows={3} value={note} onChange={(event) => setNote(event.target.value)} />
+              <textarea
+                rows={3}
+                value={note}
+                onChange={(event) => setNote(event.target.value)}
+              />
             </label>
 
             {error && <p className="text-sm text-red-600">{error}</p>}
 
             <div className="flex justify-end gap-3 border-t border-ink/15 pt-5">
-              <button type="button" onClick={onClose} className="rounded-xl border border-ink/20 px-5 py-3 text-sm">
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-xl border border-ink/20 px-5 py-3 text-sm"
+              >
                 انصراف
               </button>
-              <button type="submit" disabled={loading} className="primary-button rounded-xl disabled:opacity-50">
+              <button
+                type="submit"
+                disabled={loading}
+                className="primary-button rounded-xl disabled:opacity-50"
+              >
                 {loading ? "در حال ذخیره..." : "ذخیره تغییرات"}
               </button>
             </div>
