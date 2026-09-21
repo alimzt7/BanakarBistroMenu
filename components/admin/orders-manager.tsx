@@ -3,18 +3,30 @@
 import { useState } from "react";
 import type { AdminOrder } from "../../lib/supabase/orders";
 import { OrderStatusSelect } from "./order-status-select";
+import { createClient } from "../../lib/supabase/client";
 
 function OrderCard({
   order,
   onStatusChanged,
+  onDeleted,
 }: {
   order: AdminOrder;
   onStatusChanged: (id: string, status: string) => void;
+  onDeleted: (id: string) => void;
 }) {
   const total = order.order_items.reduce(
     (sum, item) => sum + item.unit_price * item.quantity,
     0,
   );
+  async function deleteOrder() {
+    if (!window.confirm("آیا از حذف این سفارش مطمئن هستی؟ این عملیات قابل بازگشت نیست.")) return;
+    const supabase = createClient();
+    const itemsResult = await supabase.from("order_items").delete().eq("order_id", order.id);
+    if (itemsResult.error) { window.alert("حذف آیتم‌های سفارش انجام نشد."); return; }
+    const result = await supabase.from("orders").delete().eq("id", order.id);
+    if (result.error) { window.alert("حذف سفارش انجام نشد."); return; }
+    onDeleted(order.id);
+  }
   return (
     <article
       className={`border p-5 md:p-7 ${order.status === "pending" ? "border-[#e6ad00] bg-[#ffc000]/25" : "border-ink/15 bg-white/40"}`}
@@ -26,11 +38,7 @@ function OrderCard({
             {new Date(order.created_at).toLocaleString("fa-IR")}
           </p>
         </div>
-        <OrderStatusSelect
-          orderId={order.id}
-          initialStatus={order.status}
-          onStatusChanged={(status) => onStatusChanged(order.id, status)}
-        />
+        <div className="flex items-center gap-2"><OrderStatusSelect orderId={order.id} initialStatus={order.status} onStatusChanged={(status) => onStatusChanged(order.id, status)} /><button type="button" onClick={deleteOrder} className="rounded-lg border border-red-200 px-3 py-2 text-xs text-red-600 transition hover:bg-red-50">حذف</button></div>
       </div>
       <div className="mt-5 space-y-3">
         {order.order_items.map((item) => (
@@ -72,6 +80,7 @@ export function OrdersManager({
     setOrders((items) =>
       items.map((item) => (item.id === id ? { ...item, status } : item)),
     );
+  const deleteOrder = (id: string) => setOrders((items) => items.filter((item) => item.id !== id));
   const pending = orders.filter((order) => order.status === "pending");
   const reviewed = orders.filter((order) => order.status !== "pending");
   const section = (
@@ -95,6 +104,7 @@ export function OrdersManager({
               key={order.id}
               order={order}
               onStatusChanged={updateStatus}
+              onDeleted={deleteOrder}
             />
           ))}
         </div>

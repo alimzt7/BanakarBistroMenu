@@ -3,9 +3,13 @@
 import Image from "next/image";
 import SideBar from "./side-bar";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false);
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <>

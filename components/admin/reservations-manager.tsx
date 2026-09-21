@@ -8,6 +8,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import type { AdminReservation } from "../../lib/supabase/reservations";
 import { ReservationStatusSelect } from "./reservation-status-select";
 import TimeField from "../time-field";
+import { createClient } from "../../lib/supabase/client";
 
 const statusText: Record<string, string> = {
   pending: "در انتظار بررسی",
@@ -20,10 +21,18 @@ const statusText: Record<string, string> = {
 function ReservationCard({
   item,
   onStatusChanged,
+  onDeleted,
 }: {
   item: AdminReservation;
   onStatusChanged: (id: string, status: string) => void;
+  onDeleted: (id: string) => void;
 }) {
+  async function deleteReservation() {
+    if (!window.confirm("آیا از حذف این رزرو مطمئن هستی؟ این عملیات قابل بازگشت نیست.")) return;
+    const { error } = await createClient().from("reservations").delete().eq("id", item.id);
+    if (error) { window.alert("حذف رزرو انجام نشد."); return; }
+    onDeleted(item.id);
+  }
   return (
     <article
       className={`border p-5 ${item.status === "pending" ? "border-[#e6ad00] bg-[#ffc000]/20" : "border-ink/15 bg-white/40"}`}
@@ -36,7 +45,7 @@ function ReservationCard({
             {item.source === "admin" ? "ثبت توسط ادمین" : "ثبت توسط مشتری"}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <span className="text-xs text-ink/55">
             {statusText[item.status] ?? item.status}
           </span>
@@ -45,6 +54,7 @@ function ReservationCard({
             initialStatus={item.status}
             onStatusChanged={(status) => onStatusChanged(item.id, status)}
           />
+          <button type="button" onClick={deleteReservation} className="rounded-lg border border-red-200 px-3 py-2 text-xs text-red-600 transition hover:bg-red-50">حذف</button>
         </div>
       </div>
       <div className="mt-5 grid gap-3 text-sm md:grid-cols-3">
@@ -187,11 +197,13 @@ function ReservationDetailsModal({
   reservations,
   onClose,
   onStatusChanged,
+  onDeleted,
 }: {
   date: string;
   reservations: AdminReservation[];
   onClose: () => void;
   onStatusChanged: (id: string, status: string) => void;
+  onDeleted: (id: string) => void;
 }) {
   return (
     <div
@@ -220,6 +232,7 @@ function ReservationDetailsModal({
                 key={item.id}
                 item={item}
                 onStatusChanged={onStatusChanged}
+                onDeleted={onDeleted}
               />
             ))}
           </div>
@@ -284,6 +297,12 @@ export function ReservationsManager({
     setItems((old) =>
       old.map((item) => (item.id === id ? { ...item, status } : item)),
     );
+  const deleteReservation = (id: string) => {
+    setItems((old) => old.filter((item) => item.id !== id));
+    if (selectedReservations.length === 1 && selectedReservations[0]?.id === id) {
+      setSelectedDate(null);
+    }
+  };
   return (
     <>
       <div className="mt-8 flex items-center justify-between gap-4">
@@ -376,6 +395,7 @@ export function ReservationsManager({
           reservations={selectedReservations}
           onClose={() => setSelectedDate(null)}
           onStatusChanged={update}
+          onDeleted={deleteReservation}
         />
       )}
     </>
