@@ -32,7 +32,7 @@ export function VariantModal({
   const handleConfirm = () => {
     onAddToCart({
       ...item,
-      id: `${item.id}-${selectedVariant.id}`, // برای اینکه تو سبد خرید با نسخه ساده تداخل نکنه
+      id: `${item.id}-${selectedVariant.id}`,
       productId: item.productId ?? item.id,
       price: selectedVariant.price,
       selectedVariant: selectedVariant,
@@ -47,7 +47,7 @@ export function VariantModal({
     >
       <div
         className="relative w-full max-w-md rounded-2xl bg-neutral-900 border border-white/10 p-6 shadow-2xl text-paper"
-        onClick={(e) => e.stopPropagation()} // جلوگیری از بستن موقع کلیک روی بدنه مودال
+        onClick={(e) => e.stopPropagation()}
         dir="rtl"
       >
         <div className="flex items-start justify-between border-b border-white/10 pb-4">

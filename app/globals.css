@@ -26,19 +26,16 @@
   height: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 5px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffc000;
   border-radius: 5px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(209, 91, 63);
 }
@@ -722,7 +719,6 @@ button {
   letter-spacing: 0.1em;
 }
 
-/* Admin workspace */
 .admin-shell {
   display: flex;
   min-height: 100vh;
@@ -865,20 +861,21 @@ button {
   font-size: 13px;
   font-weight: 700;
 }
-.admin-topbar-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(18, 17, 16, 0.5);
-  font-size: 10px;
+.admin-clock {
+  display: grid;
+  margin-left: 25px;
+  gap: 4px;
+  text-align: left;
 }
-.admin-topbar-status span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #55a86a;
-  box-shadow: 0 0 0 4px rgba(85, 168, 106, 0.12);
+.admin-clock strong {
+  font-size: 18px;
+  letter-spacing: 0.08em;
 }
+.admin-clock span {
+  color: rgba(18, 17, 16, 0.48);
+  font-size: 9px;
+}
+
 .admin-content {
   min-height: calc(100vh - 84px);
 }
@@ -910,19 +907,7 @@ button {
   color: rgba(18, 17, 16, 0.48);
   font-size: 11px;
 }
-.admin-date-card {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  border: 1px solid rgba(18, 17, 16, 0.1);
-  border-radius: 999px;
-  padding: 11px 15px;
-  color: rgba(18, 17, 16, 0.58);
-  font-size: 10px;
-}
-.admin-date-card svg {
-  color: #a27b00;
-}
+
 .admin-stat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -969,36 +954,6 @@ button {
 }
 .admin-stat-card > svg {
   align-self: flex-start;
-}
-.admin-dashboard-note {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  margin-top: 25px;
-  border-radius: 16px;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 24px;
-}
-.admin-note-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 14px;
-  background: var(--banakar);
-  color: var(--ink);
-}
-.admin-dashboard-note p {
-  font-size: 14px;
-  font-weight: 700;
-}
-.admin-dashboard-note span {
-  display: block;
-  margin-top: 7px;
-  color: rgba(241, 237, 228, 0.52);
-  font-size: 10px;
 }
 
 @media (max-width: 760px) {
@@ -1049,6 +1004,9 @@ button {
   }
   .admin-topbar {
     min-height: 72px;
+  }
+  .admin-clock strong {
+    font-size: 14px;
   }
 }
 .ingredient-chip {

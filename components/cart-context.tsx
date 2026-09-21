@@ -19,13 +19,10 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue | null>(null);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  // ذخیره تعداد: { "14-pomodoro-pasta-with-chicken": 1 }
   const [cart, setCart] = useState<Record<string, number>>({});
-  // ذخیره اطلاعات کامل هر آیتم اضافه شده (شامل واریانت انتخابی و قیمت دقیق آن)
   const [items, setItems] = useState<Record<string, MenuItem>>({});
   const [isOpen, setIsOpen] = useState(false);
 
-  // حالا lines مستقیماً از آیتم‌های واقعی سبد خرید ساخته می‌شه، نه آرایه استاتیک
   const lines = useMemo(() => {
     return Object.keys(cart)
       .filter((id) => (cart[id] ?? 0) > 0 && items[id])
@@ -44,19 +41,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   );
 
   function add(item: MenuItem) {
-    // ۱. اطلاعات کامل آیتم رو در حافظه نگه می‌داریم
     setItems((current) => ({
       ...current,
       [item.id]: item,
     }));
 
-    // ۲. تعدادش رو افزایش می‌دیم
     setCart((current) => ({
       ...current,
       [item.id]: (current[item.id] ?? 0) + 1,
     }));
 
-    // در صورت تمایل سبد خرید باز بشه
     setIsOpen(true);
   }
 
@@ -66,7 +60,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const quantity = (next[id] ?? 0) + delta;
       if (quantity <= 0) {
         delete next[id];
-        // تمیزکاری حافظه آیتم‌ها وقتی تعداد صفر شد
         setItems((currentItems) => {
           const nextItems = { ...currentItems };
           delete nextItems[id];

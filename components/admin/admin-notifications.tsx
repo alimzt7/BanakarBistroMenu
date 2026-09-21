@@ -116,7 +116,6 @@ export function AdminNotifications() {
           table: "reservations",
         },
         (payload) => {
-          // رزروی که خود ادمین از داخل پنل ثبت می‌کند، اعلان جدید محسوب نمی‌شود.
           if (payload.new.source === "admin") {
             return;
           }

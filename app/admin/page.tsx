@@ -17,13 +17,9 @@ export default async function AdminPage() {
       <main className="admin-dashboard">
         <div className="admin-welcome">
           <div>
-            <p className="admin-eyebrow">داشبورد مدیریت باناکار</p>
-            <h1 className="admin-title">خوش آمدی</h1>
+            <p className="admin-eyebrow">داشبورد مدیریت بناکار</p>
+            <h1 className="admin-title">سلام سلام!!</h1>
             <p className="admin-muted">وارد شده با: {user.email}</p>
-          </div>
-          <div className="admin-date-card">
-            <Icon name="spark" size={18} />
-            <span>امروز، آماده خدمت‌رسانی</span>
           </div>
         </div>
         <div className="admin-stat-grid">
@@ -61,18 +57,6 @@ export default async function AdminPage() {
             <Icon name="arrow-left" size={17} />
           </Link>
         </div>
-        <section className="admin-dashboard-note">
-          <div className="admin-note-mark">
-            <Icon name="spark" size={24} filled />
-          </div>
-          <div>
-            <p>همه چیز برای یک سرویس خوب آماده است.</p>
-            <span>
-              از منوی کناری، بخش موردنظر را انتخاب کن و مدیریت کافه را سریع
-              ادامه بده.
-            </span>
-          </div>
-        </section>
       </main>
     </>
   );

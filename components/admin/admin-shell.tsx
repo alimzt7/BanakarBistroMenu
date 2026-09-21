@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { Icon } from "../icons";
+import { AdminClock } from "./admin-clock";
 
 const navItems = [
   { href: "/admin", label: "داشبورد", icon: "spark" as const },
@@ -78,9 +79,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             <p className="admin-topbar-kicker">BANAKAR BISTRO</p>
             <p className="admin-topbar-title">پنل مدیریت</p>
           </div>
-          <div className="admin-topbar-status">
-            <span /> سیستم فعال است
-          </div>
+          <AdminClock />
         </header>
         <div className="admin-content">{children}</div>
       </div>
