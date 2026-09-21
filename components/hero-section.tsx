@@ -1,6 +1,6 @@
-import React from "react";
 import Link from "next/link";
 import { Icon } from "../components/icons";
+import Image from "next/image";
 
 function Hero() {
   return (
@@ -29,21 +29,16 @@ function Hero() {
             </div>
           </div>
           <div className="hero-photo">
-            <img
+            <Image
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6IdhyXmzmM0FYfKV8E1bVmE4nMWEnuOqCrknH9PtdV8F9Kr8ycz4tWok&s=10"
+              fill
+              loading="eager"
+              sizes="(max-width: 768px) 55vw, 43vw"
+              className="object-cover"
               alt="محیط کافه"
             />
           </div>
-          <div className="hero-stamp">
-            <Link
-              href="/reserve"
-              className="relative z-10 display text-center text-lg leading-[1]"
-            >
-              رزرو
-              <br />
-              میز
-            </Link>
-          </div>
+
           <div className="hero-orbit">
             <span className="hero-orbit-dot" />
           </div>

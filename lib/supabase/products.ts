@@ -4,6 +4,7 @@ import { createClient } from "./server";
 function mapProduct(product: any): MenuItem {
   return {
     id: product.id,
+    productId: product.id,
     displayId: product.display_code ?? "",
     isAvailable: product.is_available,
     isFeatured: product.is_featured,

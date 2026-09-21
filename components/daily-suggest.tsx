@@ -1,7 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import { Icon } from "./icons";
 import type { MenuItem } from "../lib/menu";
+import Image from "next/image";
 
 function DailySuggest({ signature }: { signature: MenuItem | undefined }) {
   if (!signature) return null;
@@ -37,9 +37,11 @@ function DailySuggest({ signature }: { signature: MenuItem | undefined }) {
         <div className="w-full md:w-auto">
           <Link href={"/menu/" + signature.slug} className="block">
             <div className="feature-image h-[360px] w-full md:w-[420px] rounded-lg">
-              <img
+              <Image
                 src={signature.image}
                 alt={signature.nameFa}
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
                 className="h-full w-full object-cover"
               />
               <span className="feature-number">{signature.id}</span>

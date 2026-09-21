@@ -6,7 +6,8 @@ import type { MenuItem } from "../lib/menu";
 import { formatPrice } from "../lib/menu";
 import { useCart } from "./cart-context";
 import { Icon } from "./icons";
-import { VariantModal } from "./variant-modal"; // یا کامپوننت پاپ‌آپ
+import { VariantModal } from "./variant-modal";
+import Image from "next/image";
 
 export function MenuCard({ item }: { item: MenuItem }) {
   const [saved, setSaved] = useState(false);
@@ -26,13 +27,19 @@ export function MenuCard({ item }: { item: MenuItem }) {
   return (
     <>
       <article
-        className={`menu-card group flex h-[350px] flex-col overflow-hidden ${
+        className={`menu-card group flex h-[380px] flex-col overflow-hidden ${
           item.isAvailable === false ? "menu-card-sold-out" : ""
         }`}
       >
-        <Link href={"/menu/" + item.slug} className="relative block h-full">
+        <Link href={"/menu/" + item.slug} className="relative block">
           <div className="menu-card-media">
-            <img src={item.image} alt={item.nameFa} />
+            <Image
+              src={item.image}
+              alt={item.nameFa}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover"
+            />
             <div className="menu-card-shade" />
             <div className="absolute right-4 top-4 flex items-center gap-2">
               {item.isFeatured && (
@@ -59,7 +66,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
                 <p className="font-sans text-[9px] font-bold tracking-[0.16em] text-paper/60">
                   {item.category}
                 </p>
-                <h3 className="display mt-2 text-[1.8rem] leading-[0.76]">
+                <h3 className="display mt-2 text-[1.3rem] leading-[0.76]">
                   {item.nameFa}
                 </h3>
                 <p className="mt-2 font-sans text-[9px] uppercase tracking-[0.14em] text-paper/60">

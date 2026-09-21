@@ -4,6 +4,7 @@ import { AddToCartButton } from "../../../components/add-to-cart-button";
 import { Icon } from "../../../components/icons";
 import { formatPrice } from "../../../lib/menu";
 import { getProductBySlug } from "../../../lib/supabase/products";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
@@ -29,8 +30,14 @@ export default async function MenuDetailPage({
           className="mt-8 grid overflow-hidden md:grid-cols-[1.02fr_.98fr]"
           style={{ boxShadow: "0 0 0 1px rgba(18,17,16,.12)" }}
         >
-          <div className="detail-image">
-            <img src={item.image} alt={item.nameFa} />
+          <div className="detail-image relative">
+            <Image
+              src={item.image}
+              alt={item.nameFa}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain"
+            />
           </div>
           <div className="detail-panel">
             <div>

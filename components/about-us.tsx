@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 function About() {
   return (
@@ -34,14 +34,20 @@ function About() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="story-photo story-photo-tall h-5">
-              <img
+              <Image
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbooTcgeMj1Qox5ZTm1mvtCTV1JEddooGV_m7apRNAiw&s=10"
+                fill
+                sizes="(max-width: 768px) 50vw, 40vw"
+                className="object-cover"
                 alt="فضای گرم کافه آمبر"
               />
             </div>
             <div className="story-photo story-photo-small h-4">
-              <img
+              <Image
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFevq_rioBAbpCL5r_ui9uP_i8faJuWUtLzQgin_dj3YDnacX1VmBW7czk&s=10"
+                fill
+                sizes="(max-width: 768px) 50vw, 30vw"
+                className="object-cover"
                 alt="میز رستوران با نور عصر"
               />
             </div>

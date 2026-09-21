@@ -5,6 +5,7 @@ import Link from "next/link";
 import { categories, type MenuCategory, type MenuItem } from "../../lib/menu";
 import { Icon } from "../icons";
 import { ProductEditModal } from "./product-edit-modal";
+import Image from "next/image";
 
 export function ProductsManager({
   initialProducts,
@@ -89,8 +90,8 @@ export function ProductsManager({
                   onClick={() => setSelectedProduct(product)}
                   className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${selectedProduct?.id === product.id ? "border-[var(--banakar)] bg-[var(--banakar)]/15" : "border-ink/10 bg-white/30 hover:bg-black/5"}`}
                 >
-                  <div className="h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-black/10">
-                    {product.image && <img src={product.image} alt="" className="h-full w-full object-cover" />}
+                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-black/10">
+                    {product.image && <Image src={product.image} alt="" fill sizes="48px" className="object-cover" />}
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-bold">{product.nameFa}</p>
@@ -119,8 +120,8 @@ export function ProductsManager({
           <aside className="border border-ink/15 bg-white/35 p-5">
             {selectedProduct ? (
               <>
-                <div className="aspect-square overflow-hidden bg-black/10">
-                  {selectedProduct.image && <img src={selectedProduct.image} alt={selectedProduct.nameFa} className="h-full w-full object-cover" />}
+                <div className="relative aspect-square overflow-hidden bg-black/10">
+                  {selectedProduct.image && <Image src={selectedProduct.image} alt={selectedProduct.nameFa} fill sizes="300px" className="object-cover" />}
                 </div>
                 <p className="eyebrow mt-5 text-copper">پیش‌نمایش محصول</p>
                 <h2 className="display mt-3 text-3xl">{selectedProduct.nameFa}</h2>

@@ -11,6 +11,7 @@ type CartContextValue = {
   isOpen: boolean;
   add: (item: MenuItem) => void;
   change: (id: string, delta: number) => void;
+  clear: () => void;
   open: () => void;
   close: () => void;
 };
@@ -78,6 +79,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     });
   }
 
+  function clear() {
+    setCart({});
+    setItems({});
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -88,6 +94,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         isOpen,
         add,
         change,
+        clear,
         open: () => setIsOpen(true),
         close: () => setIsOpen(false),
       }}

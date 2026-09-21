@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { categories, type MenuCategory, type MenuItem } from "../../lib/menu";
 import { createClient } from "../../lib/supabase/client";
 import { Icon } from "../icons";
+import Image from "next/image";
 
 type ProductEditModalProps = {
   product: MenuItem;
@@ -111,11 +112,13 @@ export function ProductEditModal({
         <form onSubmit={handleSubmit} className="grid gap-8 p-5 md:grid-cols-[220px_1fr] md:p-8">
           <div>
             <p className="field-label">تصویر محصول</p>
-            <div className="mt-3 aspect-square overflow-hidden bg-black/10">
+            <div className="relative mt-3 aspect-square overflow-hidden bg-black/10">
               {product.image ? (
-                <img
+                <Image
                   src={product.image}
                   alt={product.nameFa}
+                  fill
+                  sizes="220px"
                   className="h-full w-full object-cover"
                 />
               ) : (

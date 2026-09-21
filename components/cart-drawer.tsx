@@ -5,11 +5,46 @@ import { formatPrice } from "../lib/menu";
 import { useCart } from "./cart-context";
 import { Icon } from "./icons";
 import { tables } from "../lib/tables";
+import Image from "next/image";
 
 export function CartDrawer() {
-  const { cart, lines, total, isOpen, close, change } = useCart();
+  const { cart, lines, total, isOpen, close, change, clear } = useCart();
   const [confirmed, setConfirmed] = useState(false);
   const [tableNumber, setTableNumber] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  async function submitOrder() {
+    if (!tableNumber || lines.length === 0 || submitting) return;
+
+    setSubmitting(true);
+    setError("");
+
+    const response = await fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        tableNumber,
+        items: lines.map((item) => ({
+          productId: item.productId ?? item.id,
+          productName: item.nameFa,
+          variantName: item.selectedVariant?.nameFa ?? null,
+          quantity: cart[item.id] ?? 0,
+          unitPrice: item.price,
+        })),
+      }),
+    });
+
+    setSubmitting(false);
+
+    if (!response.ok) {
+      setError("ثبت سفارش انجام نشد. دوباره تلاش کن.");
+      return;
+    }
+
+    clear();
+    setConfirmed(true);
+  }
 
   if (!isOpen) return null;
 
@@ -77,9 +112,11 @@ export function CartDrawer() {
                   key={item.id}
                   className="flex gap-4 border-b border-ink/10 pb-5"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt=""
+                    width={70}
+                    height={70}
                     className="h-[70px] w-[70px] shrink-0 object-cover grayscale-[0.12] rounded-lg"
                   />
                   <div className="min-w-0 flex-1">
@@ -155,11 +192,12 @@ export function CartDrawer() {
             </div>
             <button
               className="primary-button w-full justify-between disabled:cursor-not-allowed disabled:opacity-35"
-              disabled={lines.length === 0 || !tableNumber}
-              onClick={() => setConfirmed(true)}
+              disabled={lines.length === 0 || !tableNumber || submitting}
+              onClick={submitOrder}
             >
-              تایید سفارش <Icon name="arrow-up-left" size={17} />
+              {submitting ? "در حال ثبت..." : "تایید سفارش"} <Icon name="arrow-up-left" size={17} />
             </button>
+            {error && <p className="mt-3 text-center text-xs text-red-600">{error}</p>}
           </div>
         )}
       </aside>

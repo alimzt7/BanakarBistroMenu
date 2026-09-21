@@ -26,6 +26,7 @@ export type ProductVariant = {
 
 export type MenuItem = {
   id: string;
+  productId?: string;
   displayId?: string;
   isAvailable?: boolean;
   isFeatured?: boolean;

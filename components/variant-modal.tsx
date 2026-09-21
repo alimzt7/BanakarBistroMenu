@@ -33,6 +33,7 @@ export function VariantModal({
     onAddToCart({
       ...item,
       id: `${item.id}-${selectedVariant.id}`, // برای اینکه تو سبد خرید با نسخه ساده تداخل نکنه
+      productId: item.productId ?? item.id,
       price: selectedVariant.price,
       selectedVariant: selectedVariant,
     });
