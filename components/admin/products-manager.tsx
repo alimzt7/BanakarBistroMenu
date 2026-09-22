@@ -6,6 +6,7 @@ import { categories, type MenuCategory, type MenuItem } from "../../lib/menu";
 import { Icon } from "../icons";
 import { ProductEditModal } from "./product-edit-modal";
 import Image from "next/image";
+import { ProductCreateModal } from "./product-create-modal";
 
 export function ProductsManager({
   initialProducts,
@@ -20,6 +21,7 @@ export function ProductsManager({
     initialProducts[0] ?? null,
   );
   const [editingProduct, setEditingProduct] = useState<MenuItem | null>(null);
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
 
   const visibleProducts = useMemo(() => {
     if (activeCategory === "آرشیو") {
@@ -50,9 +52,7 @@ export function ProductsManager({
             <p className="eyebrow text-copper">مدیریت منو</p>
             <h1 className="display mt-3 text-4xl md:text-5xl">محصولات</h1>
           </div>
-          <Link href="/admin" className="text-sm text-ink/60 hover:text-copper">
-            بازگشت به پنل
-          </Link>
+          <div className="flex items-center gap-3"><button type="button" onClick={() => setIsCreateOpen(true)} className="primary-button rounded-xl">+ افزودن محصول</button><Link href="/admin" className="text-sm text-ink/60 hover:text-copper">بازگشت به پنل</Link></div>
         </div>
 
         <div
@@ -209,6 +209,7 @@ export function ProductsManager({
           onSaved={handleSaved}
         />
       )}
+      {isCreateOpen && <ProductCreateModal onClose={() => setIsCreateOpen(false)} onCreated={(product) => { setProducts((current) => [...current, product]); setSelectedProduct(product); setActiveCategory(product.category); }} />}
     </main>
   );
 }

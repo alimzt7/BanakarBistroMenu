@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "img01.live-app.ir",
       },
+      {
+        protocol: "https",
+        hostname: "**.supabase.co",
+      },
     ],
   },
 };

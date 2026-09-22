@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { categories, type MenuCategory, type MenuItem } from "../../lib/menu";
 import { createClient } from "../../lib/supabase/client";
 import { Icon } from "../icons";
-import Image from "next/image";
+import { ProductImageUploader } from "./product-image-uploader";
 
 type ProductEditModalProps = {
   product: MenuItem;
@@ -32,6 +32,7 @@ export function ProductEditModal({
   const [isAvailable, setIsAvailable] = useState(product.isAvailable ?? true);
   const [isFeatured, setIsFeatured] = useState(product.isFeatured ?? false);
   const [isArchived, setIsArchived] = useState(product.isArchived ?? false);
+  const [image, setImage] = useState(product.image);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -57,6 +58,7 @@ export function ProductEditModal({
         preparation_time: time,
         ingredients: nextIngredients,
         note: note || null,
+        image_url: image || null,
         is_available: isAvailable,
         is_featured: isFeatured,
         is_archived: isArchived,
@@ -84,6 +86,7 @@ export function ProductEditModal({
       isAvailable,
       isFeatured,
       isArchived,
+      image,
     });
     onClose();
   }
@@ -117,20 +120,12 @@ export function ProductEditModal({
         >
           <div>
             <p className="field-label">تصویر محصول</p>
-            <div className="relative mt-3 aspect-square overflow-hidden bg-black/10">
-              {product.image ? (
-                <Image
-                  src={product.image}
-                  alt={product.nameFa}
-                  fill
-                  sizes="220px"
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-sm text-ink/45">
-                  بدون تصویر
-                </div>
-              )}
+            <div className="mt-3">
+              <ProductImageUploader
+                value={image}
+                onChange={setImage}
+                onError={setError}
+              />
             </div>
 
             <div className="mt-6 space-y-3 text-sm">
