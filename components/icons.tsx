@@ -5,6 +5,7 @@ type IconName =
   | "arrow-left"
   | "arrow-right"
   | "bag"
+  | "bell"
   | "calendar"
   | "clock"
   | "close"
@@ -71,6 +72,12 @@ export function Icon({
       <>
         <path d="M6 8h12l1 12H5L6 8Z" />
         <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+      </>
+    ),
+    bell: (
+      <>
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+        <path d="M10 21h4" />
       </>
     ),
     calendar: (

@@ -6,7 +6,7 @@ import { Icon } from "../icons";
 
 type NotificationItem = {
   id: string;
-  type: "order" | "reservation";
+  type: "order" | "reservation" | "waiter_call";
   title: string;
   description: string;
   createdAt: string;
@@ -25,19 +25,36 @@ function playDing() {
   if (!AudioContextClass) return;
 
   const context = new AudioContextClass();
-  const oscillator = context.createOscillator();
-  const gain = context.createGain();
+  const masterGain = context.createGain();
+  const startTime = context.currentTime;
 
-  oscillator.type = "sine";
-  oscillator.frequency.value = 880;
-  gain.gain.setValueAtTime(0.12, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.35);
+  masterGain.gain.value = 0.32;
+  masterGain.connect(context.destination);
 
-  oscillator.connect(gain);
-  gain.connect(context.destination);
+  const tones = [
+    { frequency: 660, delay: 0, volume: 0.28 },
+    { frequency: 880, delay: 0.18, volume: 0.22 },
+  ];
 
-  oscillator.start();
-  oscillator.stop(context.currentTime + 0.35);
+  tones.forEach(({ frequency, delay, volume }) => {
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    const toneStart = startTime + delay;
+    const toneEnd = startTime + 1;
+
+    oscillator.type = "triangle";
+    oscillator.frequency.value = frequency;
+    gain.gain.setValueAtTime(0.001, toneStart);
+    gain.gain.linearRampToValueAtTime(volume, toneStart + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.001, toneEnd);
+
+    oscillator.connect(gain);
+    gain.connect(masterGain);
+    oscillator.start(toneStart);
+    oscillator.stop(toneEnd);
+  });
+
+  window.setTimeout(() => void context.close(), 1200);
 }
 
 function showSystemNotification(notification: NotificationItem) {
@@ -71,7 +88,10 @@ export function AdminNotifications() {
   const audioReady = useRef(false);
 
   useEffect(() => {
-    setSoundEnabled(localStorage.getItem("admin-notification-sound") === "on");
+    const savedSound =
+      localStorage.getItem("admin-notification-sound") === "on";
+    setSoundEnabled(savedSound);
+    audioReady.current = savedSound;
     setSystemNotificationEnabled(
       typeof Notification !== "undefined" &&
         Notification.permission === "granted",
@@ -137,6 +157,33 @@ export function AdminNotifications() {
           }
 
           showSystemNotification(notification);
+
+          window.setTimeout(() => setShowToast(null), 5000);
+        },
+      )
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "waiter_calls",
+        },
+        (payload) => {
+          const notification: NotificationItem = {
+            id: `waiter-call-${payload.new.id}`,
+            type: "waiter_call",
+            title: "درخواست جدید",
+            description: `میز ${payload.new.table_number} نیاز به راهنمایی دارد.`,
+            createdAt: payload.new.created_at,
+            href: "/admin",
+          };
+
+          setNotifications((current) => [notification, ...current]);
+          setShowToast(notification);
+
+          if (audioReady.current) {
+            playDing();
+          }
 
           window.setTimeout(() => setShowToast(null), 5000);
         },

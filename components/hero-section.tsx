@@ -30,7 +30,7 @@ function Hero() {
           </div>
           <div className="hero-photo">
             <Image
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6IdhyXmzmM0FYfKV8E1bVmE4nMWEnuOqCrknH9PtdV8F9Kr8ycz4tWok&s=10"
+              src="/images/cafe/IMG_20260916_220424_437.jpg"
               fill
               loading="eager"
               sizes="(max-width: 768px) 55vw, 43vw"

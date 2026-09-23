@@ -14,6 +14,13 @@ export function CartDrawer() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  function handleClose() {
+    setConfirmed(false);
+    setTableNumber("");
+    setError("");
+    close();
+  }
+
   async function submitOrder() {
     if (!tableNumber || lines.length === 0 || submitting) return;
 
@@ -51,7 +58,7 @@ export function CartDrawer() {
   return (
     <div
       className="fixed inset-0 z-[70] flex justify-end bg-ink/60 backdrop-blur-sm"
-      onClick={close}
+      onClick={handleClose}
     >
       <aside
         className="cart-drawer"
@@ -64,7 +71,7 @@ export function CartDrawer() {
           </div>
           <button
             className="icon-button icon-button-light"
-            onClick={close}
+            onClick={handleClose}
             aria-label="بستن سبد"
           >
             <Icon name="close" size={17} />
@@ -78,17 +85,12 @@ export function CartDrawer() {
                 <Icon name="spark" size={28} />
               </span>
               <p className="display mt-6 text-3xl leading-[0.8]">
-                ثبت شد.
-                <br />
-                به زودی می بینیمتون
+                سفارش شما ثبت شد.
               </p>
-              <p className="mt-5 max-w-[260px] text-xs leading-6 text-ink/55">
-                این نسخه یک تجربه‌ی نمایشی است؛ سفارش شما برای تست رابط کاربری
-                ثبت شد.
-              </p>
+
               <button
                 className="mt-7 text-[10px] font-bold uppercase tracking-[0.15em] underline underline-offset-4"
-                onClick={close}
+                onClick={handleClose}
               >
                 بازگشت به منو
               </button>
