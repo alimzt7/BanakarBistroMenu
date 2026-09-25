@@ -173,7 +173,7 @@ export function AdminNotifications() {
             id: `waiter-call-${payload.new.id}`,
             type: "waiter_call",
             title: "درخواست جدید",
-            description: `میز ${payload.new.table_number} نیاز به راهنمایی دارد.`,
+            description: ` ${payload.new.table_number} نیاز به راهنمایی دارد.`,
             createdAt: payload.new.created_at,
             href: "/admin",
           };

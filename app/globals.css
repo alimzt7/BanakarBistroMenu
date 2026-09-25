@@ -126,6 +126,11 @@ button {
 .header-cart-button:hover {
   transform: translateY(-2px);
 }
+
+.side-bar-header {
+  background: var(--banakar);
+}
+
 .cart-count {
   display: flex;
   height: 23px;
