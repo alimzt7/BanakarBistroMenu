@@ -59,7 +59,21 @@ export function ProductsManager({
             <p className="eyebrow text-copper">مدیریت منو</p>
             <h1 className="display mt-3 text-4xl md:text-5xl">محصولات</h1>
           </div>
-          <div className="flex flex-wrap items-center gap-3"><button type="button" onClick={() => setIsCreateOpen(true)} className="primary-button rounded-xl">+ افزودن محصول</button><Link href="/admin" className="text-sm text-ink/60 hover:text-copper">بازگشت به پنل</Link></div>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setIsCreateOpen(true)}
+              className="primary-button rounded-xl"
+            >
+              + افزودن محصول
+            </button>
+            <Link
+              href="/admin"
+              className="text-sm text-ink/60 hover:text-copper"
+            >
+              بازگشت به پنل
+            </Link>
+          </div>
         </div>
 
         <div
@@ -68,7 +82,7 @@ export function ProductsManager({
         >
           <aside className="border border-ink/15 bg-white/35 p-4">
             <h2 className="mb-4 text-sm font-bold">دسته‌بندی‌ها</h2>
-            <div className="flex gap-2 overflow-x-auto pb-1 xl:block xl:space-y-1 xl:overflow-visible xl:pb-0">
+            <div className="menu-toolbar">
               {[...categories, "آرشیو" as const].map((category) => {
                 const count =
                   category === "آرشیو"
@@ -216,7 +230,16 @@ export function ProductsManager({
           onSaved={handleSaved}
         />
       )}
-      {isCreateOpen && <ProductCreateModal onClose={() => setIsCreateOpen(false)} onCreated={(product) => { setProducts((current) => [...current, product]); setSelectedProduct(product); setActiveCategory(product.category); }} />}
+      {isCreateOpen && (
+        <ProductCreateModal
+          onClose={() => setIsCreateOpen(false)}
+          onCreated={(product) => {
+            setProducts((current) => [...current, product]);
+            setSelectedProduct(product);
+            setActiveCategory(product.category);
+          }}
+        />
+      )}
     </main>
   );
 }

@@ -99,7 +99,7 @@ button {
 
 .brand-mark {
   background: var(--banakar);
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .brand-name:hover {
