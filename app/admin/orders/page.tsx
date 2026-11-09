@@ -12,10 +12,10 @@ export default async function AdminOrdersPage() {
       <AdminNotifications />
       <main className="min-h-screen bg-[var(--paper)] px-5 py-10 text-[var(--ink)] md:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="flex items-end justify-between gap-5">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-5">
             <div>
               <p className="eyebrow text-copper">مدیریت سفارش‌ها</p>
-              <h1 className="display mt-4 text-5xl">سفارش‌ها</h1>
+              <h1 className="display mt-4 text-4xl sm:text-5xl">سفارش‌ها</h1>
             </div>
             <Link
               href="/admin"

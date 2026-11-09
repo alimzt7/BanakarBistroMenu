@@ -1,6 +1,9 @@
 import type { MenuCategory, MenuItem, ProductVariant } from "../../lib/menu";
 import { createClient } from "./server";
 
+const PRODUCT_SELECT =
+  "id, display_code, is_available, is_featured, is_archived, slug, name_fa, name_en, description, price, category, image_url, tag, preparation_time, ingredients, note, product_variants(id, name_fa, name_en, price)";
+
 function mapProduct(product: any): MenuItem {
   return {
     id: product.id,
@@ -38,7 +41,7 @@ export async function getProducts(options?: {
 
   let query = supabase
     .from("products")
-    .select("*, product_variants(*)")
+    .select(PRODUCT_SELECT)
     .order("created_at", { ascending: true });
 
   if (!options?.includeArchived) {
@@ -54,6 +57,24 @@ export async function getProducts(options?: {
   return (data ?? []).map(mapProduct);
 }
 
+export async function getDailySuggestion(): Promise<MenuItem | undefined> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("products")
+    .select(PRODUCT_SELECT)
+    .eq("is_archived", false)
+    .order("is_featured", { ascending: false })
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data ? mapProduct(data) : undefined;
+}
+
 export async function getProductBySlug(
   slug: string,
 ): Promise<MenuItem | undefined> {
@@ -61,7 +82,7 @@ export async function getProductBySlug(
 
   const { data, error } = await supabase
     .from("products")
-    .select("*, product_variants(*)")
+    .select(PRODUCT_SELECT)
     .eq("slug", slug)
     .eq("is_archived", false)
     .maybeSingle();
@@ -80,7 +101,7 @@ export async function getProductById(
 
   const { data, error } = await supabase
     .from("products")
-    .select("*, product_variants(*)")
+    .select(PRODUCT_SELECT)
     .eq("id", id)
     .maybeSingle();
 

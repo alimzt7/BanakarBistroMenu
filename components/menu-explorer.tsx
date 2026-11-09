@@ -62,7 +62,7 @@ export function MenuExplorer({ items }: { items: MenuItem[] }) {
         </div>
 
         {filteredItems.length ? (
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {filteredItems.map((item) => (
               <MenuCard key={item.id} item={item} />
             ))}

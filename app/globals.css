@@ -5,6 +5,7 @@
 @font-face {
   font-family: Peyda;
   src: url(../public/fonts/Peyda-Black.ttf);
+  font-display: swap;
 }
 
 :root {
@@ -98,7 +99,7 @@ button {
 
 .brand-mark {
   background: var(--banakar);
-  border-radius: 50;
+  border-radius: 50%;
 }
 
 .brand-name:hover {
@@ -107,21 +108,19 @@ button {
 }
 
 .header-cart-button {
+  display: flex;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
   gap: 8px;
   border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
   font-size: 10px;
   letter-spacing: 0.08em;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
-}
-.header-cart-button {
-  display: flex;
-  min-height: 40px;
-  background: var(--paper);
-  color: var(--ink);
 }
 .header-cart-button:hover {
   transform: translateY(-2px);
@@ -192,19 +191,19 @@ button {
   transform: rotate(-5deg);
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.22);
 }
-.hero-photo Image,
-.menu-card-media Image,
-.story-photo Image,
-.detail-image Image {
+.hero-photo img,
+.menu-card-media img,
+.story-photo img,
+.detail-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.hero-photo Image {
+.hero-photo img {
   filter: saturate(0.74) contrast(1.03);
   transition: transform 0.7s ease;
 }
-.hero-photo:hover Image {
+.hero-photo:hover img {
   transform: scale(1.06);
 }
 .hero-copy {
@@ -323,14 +322,14 @@ button {
   background: linear-gradient(0deg, rgba(18, 17, 16, 0.7), transparent 60%);
   content: "";
 }
-.feature-image Image {
+.feature-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: saturate(0.75);
   transition: transform 0.8s ease;
 }
-.feature-image:hover Image {
+.feature-image:hover img {
   transform: scale(1.06);
 }
 .feature-callout {
@@ -426,14 +425,14 @@ button {
   background: var(--coal);
 }
 
-.menu-card-media Image {
+.menu-card-media img {
   display: block;
   object-fit: cover;
   object-position: center;
   filter: saturate(0.76) contrast(1.02);
   transition: transform 0.8s ease;
 }
-.menu-card:hover .menu-card-media Image {
+.menu-card:hover .menu-card-media img {
   transform: scale(1.07);
 }
 .menu-card-shade {
@@ -465,7 +464,7 @@ button {
   background: var(--banakar);
   color: var(--ink);
 }
-.menu-card-sold-out .menu-card-media Image {
+.menu-card-sold-out .menu-card-media img {
   filter: grayscale(0.8) saturate(0.35) brightness(0.72);
 }
 .sold-out-overlay {
@@ -549,11 +548,11 @@ button {
   overflow: hidden;
   background: var(--coal);
 }
-.story-photo Image {
+.story-photo img {
   filter: saturate(0.72);
   transition: transform 0.7s ease;
 }
-.story-photo:hover Image {
+.story-photo:hover img {
   transform: scale(1.05);
 }
 .story-photo-tall {
@@ -669,7 +668,9 @@ button {
 }
 .cart-drawer {
   display: flex;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100%;
   width: min(100%, 490px);
   flex-direction: column;
   background: var(--paper);
@@ -704,7 +705,7 @@ button {
   overflow: hidden;
   background: var(--coal);
 }
-.detail-image Image {
+.detail-image img {
   filter: saturate(0.75);
 }
 .detail-panel {
@@ -963,38 +964,52 @@ button {
 
 @media (max-width: 760px) {
   .admin-sidebar {
-    width: 76px;
-    align-items: center;
-    padding: 20px 9px 14px;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    border-top: 1px solid rgba(241, 237, 228, 0.12);
+    padding: 7px 10px calc(7px + env(safe-area-inset-bottom));
   }
   .admin-workspace {
-    margin-right: 76px;
+    margin-right: 0;
   }
-  .admin-brand {
-    padding: 0 0 22px;
-    border: 0;
+  .admin-sidebar > div:first-child {
+    width: 100%;
   }
-  .admin-brand > span:last-child,
+  .admin-brand,
   .admin-nav-label,
-  .admin-nav-item span,
-  .admin-nav-item i,
-  .admin-sidebar-bottom span {
+  .admin-sidebar-bottom {
     display: none;
   }
+  .admin-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+  }
   .admin-nav-item {
+    min-height: 54px;
+    flex-direction: column;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    padding: 0;
+    gap: 4px;
+    padding: 5px 2px;
+    font-size: 9px;
   }
-  .admin-sidebar-bottom {
-    justify-items: center;
+  .admin-nav-item span {
+    display: block;
+    white-space: nowrap;
+    font-size: 9px;
   }
-  .admin-back-link,
-  .admin-logout {
-    justify-content: center;
-    width: 52px;
-    padding: 12px 0;
+  .admin-nav-item i {
+    display: none;
+  }
+  .admin-content {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
   .admin-welcome {
     align-items: flex-start;
@@ -1069,5 +1084,14 @@ button {
   }
   .detail-panel {
     padding: 28px 22px 30px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .menu-card {
+    height: 380px;
+  }
+  .menu-card-media {
+    height: 260px;
   }
 }

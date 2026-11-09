@@ -47,21 +47,21 @@ export function ProductsManager({
   return (
     <main className="min-h-screen bg-[var(--paper)] px-4 py-6 text-[var(--ink)] md:px-8">
       <div className="mx-auto max-w-[1500px]">
-        <div className="mb-6 flex items-end justify-between gap-5">
+        <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-5">
           <div>
             <p className="eyebrow text-copper">مدیریت منو</p>
             <h1 className="display mt-3 text-4xl md:text-5xl">محصولات</h1>
           </div>
-          <div className="flex items-center gap-3"><button type="button" onClick={() => setIsCreateOpen(true)} className="primary-button rounded-xl">+ افزودن محصول</button><Link href="/admin" className="text-sm text-ink/60 hover:text-copper">بازگشت به پنل</Link></div>
+          <div className="flex flex-wrap items-center gap-3"><button type="button" onClick={() => setIsCreateOpen(true)} className="primary-button rounded-xl">+ افزودن محصول</button><Link href="/admin" className="text-sm text-ink/60 hover:text-copper">بازگشت به پنل</Link></div>
         </div>
 
         <div
-          className="grid gap-4 lg:grid-cols-[220px_minmax(300px,1fr)_300px]"
+          className="grid min-w-0 gap-4 xl:grid-cols-[200px_minmax(0,1fr)_260px] 2xl:grid-cols-[220px_minmax(300px,1fr)_300px]"
           dir="rtl"
         >
           <aside className="border border-ink/15 bg-white/35 p-4">
             <h2 className="mb-4 text-sm font-bold">دسته‌بندی‌ها</h2>
-            <div className="space-y-1">
+            <div className="flex gap-2 overflow-x-auto pb-1 xl:block xl:space-y-1 xl:overflow-visible xl:pb-0">
               {[...categories, "آرشیو" as const].map((category) => {
                 const count =
                   category === "آرشیو"
@@ -79,7 +79,7 @@ export function ProductsManager({
                     key={category}
                     type="button"
                     onClick={() => setActiveCategory(category)}
-                    className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-right text-sm transition ${activeCategory === category ? "bg-[var(--banakar)] font-bold" : "hover:bg-black/5"}`}
+                    className={`flex w-auto shrink-0 items-center justify-between gap-3 whitespace-nowrap rounded-lg px-3 py-3 text-right text-sm transition xl:w-full xl:shrink-0 ${activeCategory === category ? "bg-[var(--banakar)] font-bold" : "hover:bg-black/5"}`}
                   >
                     <span>{category}</span>
                     <span className="text-xs opacity-60">{count}</span>

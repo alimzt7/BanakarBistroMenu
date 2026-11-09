@@ -305,14 +305,14 @@ export function ReservationsManager({
   };
   return (
     <>
-      <div className="mt-8 flex items-center justify-between gap-4">
+      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <button
           onClick={() => setShowAdd(true)}
-          className="bg-[var(--banakar)] px-5 py-3 text-sm text-white"
+          className="self-start whitespace-nowrap bg-[var(--banakar)] px-5 py-3 text-sm text-white"
         >
           + افزودن رزرو
         </button>
-        <div className="flex items-center gap-3">
+        <div className="flex w-full items-center justify-between gap-2 sm:w-auto sm:justify-start sm:gap-3">
           <button
             onClick={() =>
               setMonth((current) =>
@@ -323,11 +323,11 @@ export function ReservationsManager({
                 }).subtract(1, "months"),
               )
             }
-            className="border border-ink/15 px-3 py-2"
+            className="shrink-0 whitespace-nowrap border border-ink/15 px-2 py-2 text-xs sm:px-3 sm:text-sm"
           >
             ماه قبل
           </button>
-          <h2 className="min-w-36 text-center text-xl font-bold">
+          <h2 className="min-w-0 flex-1 text-center text-base font-bold sm:min-w-36 sm:flex-none sm:text-xl">
             {month.format("MMMM YYYY")}
           </h2>
           <button
@@ -340,7 +340,7 @@ export function ReservationsManager({
                 }).add(1, "months"),
               )
             }
-            className="border border-ink/15 px-3 py-2"
+            className="shrink-0 whitespace-nowrap border border-ink/15 px-2 py-2 text-xs sm:px-3 sm:text-sm"
           >
             ماه بعد
           </button>
@@ -358,9 +358,12 @@ export function ReservationsManager({
         ].map((day) => (
           <div
             key={day}
-            className="border-b border-ink/15 bg-black/[.04] p-2 text-center text-xs font-bold md:p-3"
+            className="border-b border-ink/15 bg-black/[.04] p-1 text-center text-[10px] font-bold sm:p-2 sm:text-xs md:p-3"
           >
-            {day}
+            <span className="sm:hidden" aria-label={day} title={day}>
+              {day[0]}
+            </span>
+            <span className="hidden sm:inline">{day}</span>
           </div>
         ))}
         {days.map((day, index) => {
@@ -371,12 +374,13 @@ export function ReservationsManager({
             <button
               key={`${day.value}-${index}`}
               onClick={() => setSelectedDate(day.value)}
-              className={`min-h-24 border-b border-l border-ink/10 p-2 text-right transition hover:bg-[#ffc000]/15 md:min-h-28 md:p-3 ${day.inMonth ? "bg-white/40" : "bg-black/[.03] text-ink/35"}`}
+              className={`min-h-14 border-b border-l border-ink/10 p-1 text-right transition hover:bg-[#ffc000]/15 sm:min-h-20 sm:p-2 md:min-h-28 md:p-3 ${day.inMonth ? "bg-white/40" : "bg-black/[.03] text-ink/35"}`}
             >
               <span className="block text-sm">{day.day}</span>
               {count > 0 && (
-                <span className="mt-3 inline-flex rounded-full bg-[var(--banakar)] px-2 py-1 text-xs text-white">
-                  {count} رزرو
+                <span className="mt-1 inline-flex rounded-full bg-[var(--banakar)] px-1.5 py-0.5 text-[10px] text-white sm:mt-3 sm:px-2 sm:py-1 sm:text-xs">
+                  <span className="sm:hidden">{count}</span>
+                  <span className="hidden sm:inline">{count} رزرو</span>
                 </span>
               )}
             </button>
