@@ -150,7 +150,7 @@ export function ProductsManager({
           <aside className="border border-ink/15 bg-white/35 p-5">
             {selectedProduct ? (
               <>
-                <div className="relative aspect-square overflow-hidden bg-black/10">
+                <div className="relative mx-auto aspect-square w-full max-w-[300px] overflow-hidden bg-black/10">
                   {selectedProduct.image && (
                     <Image
                       src={selectedProduct.image}
