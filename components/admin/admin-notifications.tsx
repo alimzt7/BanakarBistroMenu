@@ -227,7 +227,7 @@ export function AdminNotifications() {
 
   return (
     <>
-      <div className="fixed left-5 top-5 z-[90] flex items-center gap-2">
+      <div className="admin-notification-controls">
         {!soundEnabled && (
           <button
             type="button"
@@ -270,7 +270,7 @@ export function AdminNotifications() {
           onClick={() => {
             window.location.href = showToast.href;
           }}
-          className="fixed left-5 top-20 z-[90] w-[280px] cursor-pointer rounded-xl bg-[var(--ink)] p-4 text-right text-[var(--paper)] shadow-2xl transition hover:scale-[1.02]"
+          className="admin-notification-toast"
         >
           <span className="block text-sm font-bold">{showToast.title}</span>
           <span className="mt-2 block text-xs text-paper/65">
@@ -283,7 +283,7 @@ export function AdminNotifications() {
       )}
 
       {isOpen && (
-        <div className="fixed left-5 top-20 z-[89] w-[320px] rounded-xl border border-ink/15 bg-[var(--paper)] p-4 text-[var(--ink)] shadow-2xl">
+        <div className="admin-notification-panel">
           <div className="flex items-center justify-between border-b border-ink/10 pb-3">
             <p className="font-bold">اعلان‌ها</p>
 

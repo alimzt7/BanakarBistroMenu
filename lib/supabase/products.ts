@@ -1,8 +1,7 @@
 import type { MenuCategory, MenuItem, ProductVariant } from "../../lib/menu";
 import { createClient } from "./server";
 
-const PRODUCT_SELECT =
-  "id, display_code, is_available, is_featured, is_archived, slug, name_fa, name_en, description, price, category, image_url, tag, preparation_time, ingredients, note, product_variants(id, name_fa, name_en, price)";
+const PRODUCT_SELECT = "*, product_variants(*)";
 
 function mapProduct(product: any): MenuItem {
   return {

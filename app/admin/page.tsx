@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "../../lib/supabase/server";
-import { AdminNotifications } from "../../components/admin/admin-notifications";
 import { Icon } from "../../components/icons";
 
 export default async function AdminPage() {
@@ -13,7 +12,6 @@ export default async function AdminPage() {
 
   return (
     <>
-      <AdminNotifications />
       <main className="admin-dashboard">
         <div className="admin-welcome">
           <div>

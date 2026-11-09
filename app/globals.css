@@ -869,9 +869,48 @@ button {
 }
 .admin-clock {
   display: grid;
-  margin-left: 25px;
+  margin-left: 0;
   gap: 4px;
   text-align: left;
+}
+.admin-topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.admin-notification-controls {
+  position: relative;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-notification-toast,
+.admin-notification-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 90;
+  width: min(320px, calc(100vw - 24px));
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+.admin-notification-toast {
+  cursor: pointer;
+  background: var(--ink);
+  padding: 16px;
+  text-align: right;
+  color: var(--paper);
+  transition: transform 0.2s ease;
+}
+.admin-notification-toast:hover {
+  transform: scale(1.02);
+}
+.admin-notification-panel {
+  border: 1px solid rgba(18, 17, 16, 0.15);
+  background: var(--paper);
+  padding: 16px;
+  color: var(--ink);
 }
 .admin-clock strong {
   font-size: 18px;
@@ -1024,9 +1063,24 @@ button {
   }
   .admin-topbar {
     min-height: 72px;
+    gap: 10px;
+    padding-inline: 14px;
+  }
+  .admin-topbar-tools {
+    gap: 10px;
+  }
+  .admin-clock {
+    margin: 0;
   }
   .admin-clock strong {
     font-size: 14px;
+  }
+  .admin-clock span {
+    font-size: 8px;
+  }
+  .admin-notification-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 }
 .ingredient-chip {
