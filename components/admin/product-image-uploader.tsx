@@ -71,7 +71,7 @@ export function ProductImageUploader({
           }}
         />
         {value ? (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[220px] overflow-hidden rounded-lg">
             <Image
               src={value}
               alt="پیش‌نمایش تصویر محصول"

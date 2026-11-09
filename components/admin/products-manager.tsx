@@ -44,6 +44,13 @@ export function ProductsManager({
     setSelectedProduct(nextProduct);
   }
 
+  function handleSelectProduct(product: MenuItem) {
+    setSelectedProduct(product);
+    if (window.matchMedia("(max-width: 1279px)").matches) {
+      setEditingProduct(product);
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[var(--paper)] px-4 py-6 text-[var(--ink)] md:px-8">
       <div className="mx-auto max-w-[1500px]">
@@ -101,7 +108,7 @@ export function ProductsManager({
               {visibleProducts.map((product) => (
                 <div
                   key={product.id}
-                  onClick={() => setSelectedProduct(product)}
+                  onClick={() => handleSelectProduct(product)}
                   className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${selectedProduct?.id === product.id ? "border-[var(--banakar)] bg-[var(--banakar)]/15" : "border-ink/10 bg-white/30 hover:bg-black/5"}`}
                 >
                   <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-black/10">
@@ -147,7 +154,7 @@ export function ProductsManager({
             </div>
           </section>
 
-          <aside className="border border-ink/15 bg-white/35 p-5">
+          <aside className="hidden border border-ink/15 bg-white/35 p-5 xl:block">
             {selectedProduct ? (
               <>
                 <div className="relative mx-auto aspect-square w-full max-w-[300px] overflow-hidden bg-black/10">
