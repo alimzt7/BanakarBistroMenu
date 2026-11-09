@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { CartDrawer } from "../components/cart-drawer";
 import { CartProvider } from "../components/cart-context";
@@ -7,6 +7,11 @@ import { SiteHeader } from "../components/site-header";
 export const metadata: Metadata = {
   title: "Banakar Bistro · Cafe x Pastry",
   description: "منوی دیجیتال برای کافه بیسترو بناکار",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
